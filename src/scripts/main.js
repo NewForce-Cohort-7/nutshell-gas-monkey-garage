@@ -7,8 +7,6 @@ const dashboard = document.querySelector("#dashboard")
 
 const render = () => {
     fetchEvents()
-    .then(
-        () => {
     fetchNews()
     .then(() => {
             dashboard.innerHTML = Nutshell()
@@ -22,22 +20,16 @@ dashboard.addEventListener(
     customEvent => {
         render()
     }
-)
+),
 
-render()
+render(),
 
-dashboard.addEventListener(
-    "stateChanged",
-    customEvent => {
-        render()
-    }
-)
 dashboard.addEventListener(
     "saveEvent",
     customEvent => {
         render()
     }
-)
+),
 
 dashboard.addEventListener(
     "saveArticle",
@@ -45,3 +37,5 @@ dashboard.addEventListener(
         render()
     }
 )
+    
+    

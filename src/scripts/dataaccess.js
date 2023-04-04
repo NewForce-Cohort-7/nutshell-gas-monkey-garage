@@ -38,7 +38,7 @@ export const sendNews = (userNewsAddition) => {
         })
 }
 
-const API = "http://localhost:8088"
+
 
 export const fetchEvents = () => {
     return fetch(`${API}/events`)

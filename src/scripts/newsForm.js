@@ -8,11 +8,13 @@ mainContainer.addEventListener("click", clickEvent => {
         const newsDescription = document.querySelector("input[name='newsDescription']").value
         const newsSite = document.querySelector("input[name='newsSite']").value
 
+        //*--*Correct timestamp does work when saving to the API*--*//
+        
         const dataToSendToAPI = {
             story: newsTitle,
             description: newsDescription,
             url: newsSite,
-            date: new Date().toISOString()
+            date: Date.now()
         }
 
         sendNews(dataToSendToAPI)
@@ -22,7 +24,9 @@ mainContainer.addEventListener("click", clickEvent => {
 
 export const NewsForm = () => {
     let html = `
-        
+        <section class="newsForm">
+            <h2>Add a story to the feed</h2>
+        </section>
         <div class="field">
             <label class="label" for="newsTitle">Title</label>
             <input type="text" name="newsTitle" class="input" >
@@ -38,6 +42,5 @@ export const NewsForm = () => {
         
         <button class="button" id="saveArticle">Save Article</button>
     `
-console.log(html)
     return html
 }

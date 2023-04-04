@@ -1,50 +1,21 @@
 {
-<<<<<<< HEAD
   "news": [
     {
-      "story": "asjkdhfl",
-      "description": "kalsdhflaksh",
-      "url": "kalshfaklsj",
-      "date": "2023-04-03T19:42:35.632Z",
+      "story": "House fire ravages local neighborhood",
+      "description": "Community left stunned after a massive fire broke out on their block",
+      "url": "wsaz.com",
+      "date": "2023-04-04T14:24:11.614Z",
       "id": 1
     }
   ],
-  "events": [],
-=======
-  "news": [],
   "events": [
     {
-      "name": "Yo Yo Ma in a Monster Truck",
-      "date": "2023-04-20",
-      "location": "Beckley, WV",
-      "id": 3
-    },
-    {
-      "name": "Tonka truck demolition derby",
-      "date": "2023-04-14",
-      "location": "Orange, TX",
-      "id": 4
-    },
-    {
-      "name": "Bare Knuckle Boxing ",
-      "date": "2023-04-24",
-      "location": "Louisville, KY",
-      "id": 5
-    },
-    {
-      "name": "Hagrid meet and greet",
-      "date": "2023-03-26",
-      "location": "Hogwarts",
-      "id": 6
-    },
-    {
-      "name": "Iron Man vs Monster Trucks",
-      "date": "2023-04-25",
-      "location": "Stark Tower",
-      "id": 7
+      "name": "Huge fireworks display!!!!",
+      "date": "2023-04-04",
+      "location": "Charleston, WV",
+      "id": 1
     }
   ],
->>>>>>> main
   "images": [],
   "messages": [],
   "tasks": []
