@@ -33,7 +33,15 @@
     }
   ],
   "images": [],
-  "messages": [],
+  "messages": [
+    {
+      "message": "Hey!",
+      "userName": "kt",
+      "date": "2023-04-05",
+      "id": 1,
+      "likes": null
+    }
+  ],
   "tasks": [
     {
       "taskDescription": "invoice",

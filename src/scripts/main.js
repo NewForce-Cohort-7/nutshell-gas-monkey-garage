@@ -1,12 +1,11 @@
 import { Nutshell } from "./Nutshell.js"
-import { fetchEvents, fetchTasks } from "./dataaccess.js"
+import { fetchEvents, fetchTasks, fetchMessages } from "./dataaccess.js"
 
 
 const dashboard = document.querySelector("#dashboard")
 
 const render = () => {
     fetchMessages()
-    
     fetchEvents()
     fetchTasks()
     .then(

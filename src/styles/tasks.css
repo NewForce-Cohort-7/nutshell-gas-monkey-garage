@@ -5,6 +5,8 @@
 
   .tasks {
     background-color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
   }
   .tasksToDo {
     background-color: aliceblue;
@@ -34,10 +36,10 @@
   }
 
 
-  .checkbox {
+ input:checked {
    margin:10px;
    margin-left:50px
- 
+  
 
   }
   #taskButton {
