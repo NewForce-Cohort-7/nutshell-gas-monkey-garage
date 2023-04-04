@@ -1,11 +1,11 @@
-import { getTasks, deleteTasks } from "./dataaccess.js"
+import { getTasks, deleteTasks, taskComplete } from "./dataaccess.js"
 import { TaskSubmission } from "./tasksForm.js"
 
 
-const convertBookingToListElement = (task) => {
+const converttaskToListElement = (task) => {
 
    return `
-<li class="tasks">
+   <li class="tasks">    
     On: ${task.date}<br>
     Description: ${task.taskDescription}  <br>
     <input type="checkbox" id="tasks--${task.id}"> DONE!
@@ -21,7 +21,7 @@ export const Tasks = () => {
     <ul class="taskToDo">
        
             ${
-              sortTasks.map(convertBookingToListElement).join("")
+              sortTasks.map(converttaskToListElement).join("")
             }
         </ul>
       
@@ -31,13 +31,22 @@ export const Tasks = () => {
 }
 
 
-const mainContainer = document.querySelector("#dashboard")
+
+/*const mainContainer = document.querySelector("#dashboard")
 mainContainer.addEventListener("click", click => {
     if (click.target.id.startsWith("tasks--")) {
         const [,taskId] = click.target.id.split("--")
         deleteTasks(parseInt(taskId))
-    }})
-  
+    }})*/
+ 
+const mainContainer = document.querySelector("#dashboard")    
+mainContainer.addEventListener("click", click => {
+        if (click.target.id.startsWith("tasks--")) {
+            const [,taskId] = click.target.id.split("--")
+            taskComplete(parseInt(taskId))
+        }
+    })
+       
 export const openTask = ()  => {
     return `<button id = "newTaskButton">New Task </button>`
 }
@@ -47,3 +56,4 @@ mainContainer.addEventListener("click", click => {
     }
     
 })
+

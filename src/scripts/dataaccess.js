@@ -356,8 +356,22 @@ export const deleteEvent = (id) => {
         )
 }
 
-//Tasks API and Exports - KT
 
+//Tasks API and Exports - KT
+//task finished
+export const taskComplete = (id) => {
+  fetch(`${API}/tasks/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        complete: true,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => response.json())
+      .then(() => dashboard.dispatchEvent(new CustomEvent("stateChanged")));
+}
 //get the Tasks from API and convert it into usable data
 export const fetchTasks = () => {
     return fetch(`${API}/tasks`)
