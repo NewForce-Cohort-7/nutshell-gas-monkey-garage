@@ -9,6 +9,50 @@
     justify-content: flex-start;
   }
   
+  /* .border { border:solid 1px black;
+    margin: 25px;
+    padding: 50px;
+    display: flex;
+    overflow-y: auto;
+    justify-content:first baseline
+  } */
+
+  .border {
+    position: relative;
+    display: inline-block;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  
+  .border::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    border-style: solid;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #f1f1f1;
+    transform: translateY(-50%);
+  }
+  
+  .border::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #f1f1f1 transparent transparent;
+    transform: translateY(-50%);
+  }
+  
+  .alignMessage {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+  }
   .input_message {
     resize: none;
     font-size: 16px;
@@ -19,14 +63,18 @@
     margin: 0;
     padding: 0;
     height: 50px; 
+    font-style: oblique;
+  }
+  .postSize{
+    font-size: xx-small;
   }
 
   /* Style the thumbs-up button */
 .message__like {background-image:url("https://clipground.com/images/thumbs-up-emoji-png-1.jpg") ;
     
     background-size: cover;
-    width: 50px;
-    height: 50px;
+    width: 15px;
+    height: 15px;
     border: none;
    }
   
@@ -35,14 +83,16 @@
     background-image:url("https://clipartcraft.com/images/emoji-clipart-thumbs-up-10.png") ;
     
     background-size: cover;
-    width: 50px;
-    height: 50px;
+    width: 15px;
+    height: 15px;
     border: none;
   }
 
-  .alignMessage {
-    display: flex;
-    align-items: center;
+  
+  .message__delete {
+    background-color: rgb(228, 16, 16);
+    width: 15px;
+    height: 15px;
+    border: none;
+    font-size: xx-small;
   }
-  
-  

@@ -2,12 +2,6 @@
   "news": [],
   "events": [
     {
-      "name": "Yo Yo Ma in a Monster Truck",
-      "date": "2023-04-20",
-      "location": "Beckley, WV",
-      "id": 3
-    },
-    {
       "name": "Tonka truck demolition derby",
       "date": "2023-04-14",
       "location": "Orange, TX",
@@ -18,12 +12,6 @@
       "date": "2023-04-24",
       "location": "Louisville, KY",
       "id": 5
-    },
-    {
-      "name": "Hagrid meet and greet",
-      "date": "2023-03-26",
-      "location": "Hogwarts",
-      "id": 6
     },
     {
       "name": "Iron Man vs Monster Trucks",
@@ -41,11 +29,34 @@
   "images": [],
   "messages": [
     {
+      "message": "hi world",
+      "userName": "adean",
+      "date": "2023-04-01",
+      "id": 5,
+      "likes": 8,
+      "dislikes": 13
+    },
+    {
+      "message": "yo world",
+      "userName": "bdean",
+      "date": "2023-04-01",
+      "id": 6,
+      "likes": 6,
+      "dislikes": 8
+    },
+    {
       "message": "Hey!",
       "userName": "kt",
       "date": "2023-04-05",
       "id": 1,
-      "likes": null
+      "likes": 1,
+      "dislikes": null
+    },
+    {
+      "message": "ello guvnuh",
+      "userName": "Aaron",
+      "date": "2023-04-12",
+      "id": 7
     }
   ],
   "tasks": [
@@ -53,11 +64,6 @@
       "taskDescription": "invoice",
       "date": "2023-04-06",
       "id": 5
-    },
-    {
-      "taskDescription": "walk dogs",
-      "date": "2023-04-04",
-      "id": 6
     },
     {
       "taskDescription": "wash dishes",
