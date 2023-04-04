@@ -1,30 +1,15 @@
 {
-
-"news":  [
-
-
-], 
-
-"events": [
-
-
-], 
-
-"images": [
-
-
-],
-
-"messages": [
-
-
-],
-
-"tasks": [
-
-    
-]
-
-
-
+  "news": [
+    {
+      "story": "asjkdhfl",
+      "description": "kalsdhflaksh",
+      "url": "kalshfaklsj",
+      "date": "2023-04-03T19:42:35.632Z",
+      "id": 1
+    }
+  ],
+  "events": [],
+  "images": [],
+  "messages": [],
+  "tasks": []
 }
