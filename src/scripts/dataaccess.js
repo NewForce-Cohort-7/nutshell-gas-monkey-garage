@@ -126,195 +126,6 @@ export const updateDislikeCount = (id) => {
   return fetch(`${API}/messages/${id}`, fetchOptions);
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //events
 export const fetchEvents = () => {
     return fetch(`${API}/events`)
@@ -355,6 +166,47 @@ export const deleteEvent = (id) => {
             }
         )
 }
+
+
+//Images Start
+export const fetchImages = () => {
+    return fetch(`${API}/images`)
+        .then(response => response.json())
+        .then(
+            (imageArray) => {
+            applicationState.images = imageArray
+    })
+}
+
+export const saveImage = (userImage) => {
+    const saveOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userImage)
+    }
+        
+    return fetch(`${API}/images`, saveOptions)
+        .then(response => response.json())
+        .then(() => {
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+}
+
+export const deleteImage = (id) => {
+    return fetch(`${API}/images/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
+
+export const getImages = () => {
+    return applicationState.images.map(image => ({...image}))
+}
+//Images End
 
 //Tasks API and Exports - KT
 
@@ -399,4 +251,4 @@ export const deleteTasks = (id) => {
             mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
         }
     )
-    }
+}
