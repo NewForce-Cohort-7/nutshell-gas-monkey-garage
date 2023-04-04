@@ -72,7 +72,7 @@ export const updateDislikeCount = (id) => {
   return fetch(`${API}/messages/${id}`, fetchOptions);
 };
 
-
+//News
 export const fetchNews = () => {
     return fetch(`${API}/news`)
     .then(response => response.json())
@@ -102,196 +102,6 @@ export const sendNews = (userNewsAddition) => {
             mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
         })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //events
 export const fetchEvents = () => {
@@ -336,12 +146,46 @@ export const deleteEvent = (id) => {
 
 export const deleteNews = (id) => {
     return fetch(`${API}/news/${id}`, { method: "DELETE"})
+}
+//Images Start
+export const fetchImages = () => {
+    return fetch(`${API}/images`)
+        .then(response => response.json())
+        .then(
+            (imageArray) => {
+            applicationState.images = imageArray
+    })
+}
+
+export const saveImage = (userImage) => {
+    const saveOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userImage)
+    }
+        
+    return fetch(`${API}/images`, saveOptions)
+        .then(response => response.json())
+        .then(() => {
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+}
+
+export const deleteImage = (id) => {
+    return fetch(`${API}/images/${id}`, { method: "DELETE" })
         .then(
             () => {
                 mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
             }
         )
 }
+
+export const getImages = () => {
+    return applicationState.images.map(image => ({...image}))
+}
+//Images End
 
 //Tasks API and Exports - KT
 
