@@ -30,9 +30,20 @@ export const Images = () => {
     return html
 }
 
+export const OpenImageForm = () => {
+    return`<button id="open-image-form">Add Image</button>`
+}
+
+mainContainer.addEventListener("click", click => {
+    if (click.target.id === "open-image-form") {
+      mainContainer.innerHTML +=    ImageForm()
+   
+    }
+})
+
 export const ImageForm = () => {
     let html = `
-        <div class="field">
+        <div class="imageForm">
             <label class="label" for="imageUrl"><b>URL</b></label>
             <input type="text" name="imageUrl" class="input" />
             <label class="label" for="imageCaption"><b>Your Caption</b></label>
