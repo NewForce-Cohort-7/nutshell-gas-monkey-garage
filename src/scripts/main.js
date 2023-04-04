@@ -1,21 +1,38 @@
 import { Nutshell } from "./Nutshell.js"
-import { fetchMessages } from "./dataaccess.js"
+import { fetchMessages, fetchEvents } from "./dataaccess.js"
 
 
 const dashboard = document.querySelector("#dashboard")
 
 const render = () => {
     fetchMessages()
-    .then(() => {
+    
+    fetchEvents()
+    .then(
+        () => {
             dashboard.innerHTML = Nutshell()
             
         }
     )
 }
 
-render()
 dashboard.addEventListener(
     "stateChanged",
+    customEvent => {
+        render()
+    }
+)
+
+render()
+dashboard.addEventListener(
+    "stateChanged", customEvent => {
+        render()
+    }
+)
+
+
+dashboard.addEventListener(
+    "saveEvent",
     customEvent => {
         render()
     }
