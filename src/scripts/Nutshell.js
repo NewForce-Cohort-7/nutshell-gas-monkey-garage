@@ -1,8 +1,17 @@
+import { Messages } from "./messages.js"
+import { userMessage } from "./userMessage.js"
 import { Events, OpenForm } from "./events.js"
 import { Tasks, openTask} from "./tasks.js"
 
 export const Nutshell = () => {
-return`
+      return `
+      <h1>Nutshell</h1>
+      <section class="userMessage">
+      ${userMessage()}
+      </section>
+      <section class="serviceForm">
+      ${Messages()}
+      </section>
       <section class="events">
             <h2>Events</h2>
             ${Events()}

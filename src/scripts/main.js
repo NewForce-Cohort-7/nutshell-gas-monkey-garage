@@ -5,6 +5,8 @@ import { fetchEvents, fetchTasks } from "./dataaccess.js"
 const dashboard = document.querySelector("#dashboard")
 
 const render = () => {
+    fetchMessages()
+    
     fetchEvents()
     fetchTasks()
     .then(
@@ -20,8 +22,7 @@ render()
 
 
 dashboard.addEventListener(
-    "stateChanged",
-    customEvent => {
+    "stateChanged", customEvent => {
         render()
     }
 )

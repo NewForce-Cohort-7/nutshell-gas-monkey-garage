@@ -1,0 +1,48 @@
+
+ 
+
+.messageField {
+    display: flex;
+    flex-direction: column;
+    height: 75px;
+    overflow-y: auto;
+    justify-content: flex-start;
+  }
+  
+  .input_message {
+    resize: none;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    vertical-align: top;
+    align-self: flex-start;
+    margin: 0;
+    padding: 0;
+    height: 50px; 
+  }
+
+  /* Style the thumbs-up button */
+.message__like {background-image:url("https://clipground.com/images/thumbs-up-emoji-png-1.jpg") ;
+    
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border: none;
+   }
+  
+  /* Style the thumbs-down button */
+  .message__dislike {
+    background-image:url("https://clipartcraft.com/images/emoji-clipart-thumbs-up-10.png") ;
+    
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border: none;
+  }
+
+  .alignMessage {
+    display: flex;
+    align-items: center;
+  }
+  
+  
