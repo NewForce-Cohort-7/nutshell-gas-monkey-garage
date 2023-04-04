@@ -53,14 +53,6 @@
       "id": 8,
       "likes": 10,
       "dislikes": 3
-    },
-    {
-      "message": "this is wild!!!",
-      "userName": "gigachad420",
-      "date": "2023-04-04",
-      "id": 9,
-      "likes": null,
-      "dislikes": null
     }
   ],
   "tasks": [

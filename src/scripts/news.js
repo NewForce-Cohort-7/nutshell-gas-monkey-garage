@@ -1,8 +1,7 @@
-import { getNews } from "./dataaccess.js";
-import { deleteNews } from "./dataaccess.js";
+import { getNews, deleteNews } from "./dataaccess.js";
 import { NewsForm } from "./newsForm.js";
 
-export const News = () => { //*--*timestamp is a work in progress*--*//
+export const News = () => { 
     const stories = getNews()
    
    

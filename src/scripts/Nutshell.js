@@ -1,8 +1,7 @@
 import { Messages } from "./messages.js"
 import { userMessage } from "./userMessage.js"
 import { Events, OpenForm } from "./events.js"
-import { News } from "./news.js"
-import { newArticle } from "./news.js"
+import { News, newArticle } from "./news.js"
 import { Tasks, openTask} from "./tasks.js"
 
 export const Nutshell = () => {

@@ -39,6 +39,9 @@ export const NewsForm = () => {
             <label class="label" for="newsSite">URL</label>
             <input type="url" name="newsSite" class="input" >
         </div>
+        <div class="option">
+        <label class="label" for="tags">Select a Tag</label>
+        <input type="option" name="tags" class="option" >
         
         <button class="button" id="saveArticle">Save Article</button>
     `
