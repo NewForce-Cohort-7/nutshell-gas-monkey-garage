@@ -105,6 +105,195 @@ export const sendNews = (userNewsAddition) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//events
 export const fetchEvents = () => {
     return fetch(`${API}/events`)
         .then(response => response.json())
@@ -114,11 +303,9 @@ export const fetchEvents = () => {
             }
         )
     }
-
     export const getEvents = () => {
         return applicationState.events.map(event => ({...event}))
     }
-
     //As the person is typing into the form fields in ServiceForm.js, they are changing the state of the application, but it is transient state because the person hasn't committed to the service request until the button is clicked. When the person clicks the button, our code takes the transient state and converts it into permanent state by storing it in the database.json file by using a fetch() call.
 export const sendEvent = (userEvents) => {
     const fetchOptions = {
@@ -129,7 +316,6 @@ export const sendEvent = (userEvents) => {
         },
         body: JSON.stringify(userEvents)
     }
-
     const mainContainer = document.querySelector("#dashboard")
     return fetch(`${API}/events`, fetchOptions)   //location of said heist
                                                     //this changes the string into json, and json turns it into an object
@@ -138,7 +324,6 @@ export const sendEvent = (userEvents) => {
             mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
         })
 }
-
 export const deleteEvent = (id) => {
     const mainContainer = document.querySelector("#dashboard")
     return fetch(`${API}/events/${id}`, { method: "DELETE" })
@@ -157,3 +342,48 @@ export const deleteNews = (id) => {
             }
         )
 }
+
+//Tasks API and Exports - KT
+
+//get the Tasks from API and convert it into usable data
+export const fetchTasks = () => {
+    return fetch(`${API}/tasks`)
+        .then(response => response.json())
+        .then(
+            (taskSubmission) => {
+                applicationState.tasks = taskSubmission
+            }
+        )
+}
+
+//import the tasks from the database - KT
+export const getTasks = () => {
+    return applicationState.tasks.map(tasks => ({...tasks}))
+}
+
+//send tasks submitted to the database -KT
+export const sendTasks= (userTask) => {
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userTask)
+    }
+    return fetch(`${API}/tasks`, fetchOptions)
+    .then(response => response.json())
+    .then(() => {
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+    })
+}
+
+//delete Tasks
+export const deleteTasks = (id) => {
+    const mainContainer = document.querySelector("#dashboard")
+    return fetch(`${API}/tasks/${id}`, { method: "DELETE" })
+    .then(
+        () => {
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        }
+    )
+    }
