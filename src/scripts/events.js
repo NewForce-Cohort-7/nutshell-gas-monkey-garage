@@ -15,7 +15,10 @@ mainContainer.addEventListener("click", click => {
     }
 })
 
+// they should see all of their events sorted into months, with a heading for each month and the total number of events in that month in parentheses beside the heading
 const convertEventToListElement = (eventObject) => {
+    console.log(eventObject)
+    // eventObject.sort((a,b) => new Date(a.date) - new Date(b.date))
     return `
     <li class="eventComplete">
     ${eventObject.name} 
@@ -29,8 +32,7 @@ export const Events = () => {
     const events = getEvents()
     const sortEvents = events.sort((a,b) => new Date(a.date) - new Date(b.date))
 
-    // they should see all of their events sorted into months, with a heading for each month and the total number of events in that month in parentheses beside the heading
-    //sort the sortEvents by month. To do so I will 
+
 
     let html = `
         <ul class="eventsList"> 
