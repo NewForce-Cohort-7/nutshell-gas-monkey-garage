@@ -1,6 +1,8 @@
 import { Messages } from "./messages.js"
 import { userMessage } from "./userMessage.js"
 import { Events, OpenForm } from "./events.js"
+import { Tasks, openTask} from "./tasks.js"
+
 export const Nutshell = () => {
       return `
       <h1>Nutshell</h1>
@@ -14,6 +16,14 @@ export const Nutshell = () => {
             <h2>Events</h2>
             ${Events()}
             ${OpenForm()}
-      </section>`
+      </section>
+      <section class="tasks">
+            <h2>Tasks</h2>
+            ${Tasks()}
+            ${openTask()}
+            </section>`
+      }
+
+
       // Render all your UI components here
-}
+
