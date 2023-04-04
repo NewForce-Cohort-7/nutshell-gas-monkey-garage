@@ -1,20 +1,20 @@
-import { openTask } from "./tasks.js";
-import { Tasks } from "./tasks.js";
-
+import { Events, OpenForm } from "./events.js"
+import { Tasks, openTask} from "./tasks.js"
 
 export const Nutshell = () => {
-      return `
-      <section class ="header">Tasks</section>
-    <section class="taskForm">
-           ${openTask()}
-       </section>
+return`
+      <section class="events">
+            <h2>Events</h2>
+            ${Events()}
+            ${OpenForm()}
+      </section>
+      <section class="tasks">
+            <h2>Tasks</h2>
+            ${Tasks()}
+            ${openTask()}
+            </section>`
+      }
 
-       <section class="tasks">
-           <h2>To Do List</h2>
-           ${Tasks()}
-       </section>
 
-       
-   `
-}
+      // Render all your UI components here
 

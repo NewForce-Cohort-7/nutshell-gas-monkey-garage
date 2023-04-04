@@ -30,14 +30,12 @@ export const getTasks = () => {
 //send tasks submitted to the database -KT
 export const sendTasks= (userTask) => {
     const fetchOptions = {
-        method: "POST",
-        headers: {
+      method: "POST",
+      headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(userTask)
     }
-
-//get the user submitted tasks from API and use the data
     return fetch(`${API}/tasks`, fetchOptions)
     .then(response => response.json())
     .then(() => {
@@ -48,11 +46,10 @@ export const sendTasks= (userTask) => {
 //delete Tasks
 export const deleteTasks = (id) => {
     const mainContainer = document.querySelector("#dashboard")
-
     return fetch(`${API}/tasks/${id}`, { method: "DELETE" })
-        .then(
-            () => {
-                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
-            }
-        )
-}
+    .then(
+        () => {
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        }
+    )
+    }
