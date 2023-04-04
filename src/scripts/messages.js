@@ -9,19 +9,24 @@ export const Messages = () => {
     const likes = message.likes || 0;
     const dislikes = message.dislikes || 0;
 
-    return `<li class="alignMessage">
-              "${message.message}" was posted by <${message.userName}
-              <button class="message__delete" id="message--${message.id}">
-                Delete
-              </button>
-              <button class="message__like" id="like--${message.id}">
+    return ` 
+    <li class="alignMessage">
+              <div class ="border">${message.message}</div>
+              <div class ="postSize"> Posted by ${message.userName} on ${message.date} </div>
+              <div title="Like"> <button class="message__like" id="like--${message.id}">
               
               </button>  
-               <div class="messageLike"> (${likes})</div> 
-              <button class="message__dislike" id="dislike--${message.id}">
+              <div class="messageLike"> (${likes})</div> </div> 
+             <div title="Dislike"> <button class="message__dislike" id="dislike--${message.id}">
               </button>
-                <div class="messageDislike"> (${dislikes}) </div>
-            </li>`;
+             <div class="messageDislike"> (${dislikes}) </div> </div>
+              <div title="DELETE">
+              <button class="message__delete" id="message--${message.id}">
+                X
+              </button> 
+              </div>
+            </li>
+            `;
   });
 
   html += convertMessageToListElement.join("");
