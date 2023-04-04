@@ -1,0 +1,51 @@
+*{
+    /* border: lightcoral dotted 1px; */
+}
+
+.events{
+    font-size: 1.25em;
+    background-color: aqua;
+}
+
+.events h2 {
+    padding-left: .5em;
+    font-family: fantasy, copperplate; 
+    font-size: 2em
+}
+
+.eventsList li:first-child {
+
+    font-weight: bold;
+    font-size: larger;
+  }
+
+.eventComplete{
+    margin-top: .75em;
+}
+
+button#open-form{
+    background-color: lightgreen;
+    border: solid black .1em;
+    padding: 1em;
+    margin: 1em;
+}
+
+button.event__delete{
+    margin-left: 1em;
+    background-color: red;
+    border: solid black .1em;
+}
+
+.blankEventForm{
+    font-size: 1.25em;
+    background-color: rgb(255, 145, 0);
+    margin-top: .75em;
+}
+
+/* left off working on the form when it pops up */
+.eventField{
+    padding-top: 1em;
+    padding-left: 1em;
+    margin-top: .75em;
+    font-size: 1.25em;
+}

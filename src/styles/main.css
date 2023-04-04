@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
 @import "details.css";
 
@@ -18,3 +19,8 @@ h1,h2,h3,h4,h5,h6 {
   letter-spacing: 2px;
 
 }
+=======
+@import "details.css";
+@import "events.css";
+
+>>>>>>> main
