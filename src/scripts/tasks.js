@@ -8,10 +8,8 @@ const convertBookingToListElement = (task) => {
 <li class="tasks">
     On: ${task.date}<br>
     Description: ${task.taskDescription}  <br>
-    <button class="task__delete"
-    id="tasks--${task.id}">
-Delete
-</button> </li>`
+    <input type="checkbox" id="tasks--${task.id}"> DONE!
+</input> </li>`
 
 }
 

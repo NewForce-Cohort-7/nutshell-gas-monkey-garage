@@ -36,11 +36,6 @@
   "messages": [],
   "tasks": [
     {
-      "taskDescription": "takes dogs to vet",
-      "date": "2023-05-01",
-      "id": 4
-    },
-    {
       "taskDescription": "invoice",
       "date": "2023-04-06",
       "id": 5
@@ -51,26 +46,6 @@
       "id": 6
     },
     {
-      "taskDescription": "trim rabbit nails",
-      "date": "2023-04-08",
-      "id": 8
-    },
-    {
-      "taskDescription": "dilly to vet",
-      "date": "2023-05-02",
-      "id": 9
-    },
-    {
-      "taskDescription": "Rivers invoice",
-      "date": "2023-04-07",
-      "id": 10
-    },
-    {
-      "taskDescription": "rabbits to vet",
-      "date": "2023-05-03",
-      "id": 11
-    },
-    {
       "taskDescription": "wash dishes",
       "date": "2023-04-05",
       "id": 12
@@ -79,6 +54,16 @@
       "taskDescription": "cook dinner",
       "date": "2023-04-05",
       "id": 13
+    },
+    {
+      "taskDescription": "dilly to vet",
+      "date": "2023-05-04",
+      "id": 14
+    },
+    {
+      "taskDescription": "dogs vet",
+      "date": "2023-05-01",
+      "id": 15
     }
   ]
 }
