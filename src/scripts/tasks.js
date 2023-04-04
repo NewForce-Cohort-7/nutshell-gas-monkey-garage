@@ -16,9 +16,9 @@ const converttaskToListElement = (task) => {
 export const Tasks = () => {
     const tasks = getTasks()
     const sortTasks = tasks.sort((a, b) => new Date(a.date) - new Date(b.date))
-    if (!tasks.comlpete){
+    if (sortTasks.complete === false){
 
-    return `
+    let html = `
     <ul class="taskToDo"><h2> To-Do List</h2>
        
             ${
@@ -27,23 +27,25 @@ export const Tasks = () => {
         </ul>
       
     `
+        
+    return html
         }
 }
 
 export const finishedTasks = () => {
-   const tasks = getTasks()
-    const sortTasks = tasks.sort((a, b) => new Date(a.date) - new Date(b.date))
-    if (tasks.comlpete){
-    return `
+    const tasks = getTasks()
+    if (tasks.complete === true){
+    let html = `
     <ul class="taskToDo"><h2> Finished </h2>
        
             ${
-                sortTasks.map(converttaskToListElement).join("")
-            } ${new Date}
+                tasks.map(converttaskToListElement).join("")
+            } 
         </ul>
       
     `
-
+        
+    return html
 
 }
     }

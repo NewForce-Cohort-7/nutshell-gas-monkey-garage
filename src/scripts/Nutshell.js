@@ -2,7 +2,7 @@ import { Messages } from "./messages.js"
 import { userMessage } from "./userMessage.js"
 import { Events, OpenForm } from "./events.js"
 import { OpenImageForm, ImageForm, Images } from "./images.js"
-import { Tasks, openTask} from "./tasks.js"
+import { Tasks, openTask, finishedTasks} from "./tasks.js"
 
 export const Nutshell = () => {
       return `
@@ -27,6 +27,6 @@ export const Nutshell = () => {
             <h2>Tasks</h2>
             ${openTask()}
             ${Tasks()}
-            ${finishedTasks}
+            ${finishedTasks()}
             </section>`
 }
