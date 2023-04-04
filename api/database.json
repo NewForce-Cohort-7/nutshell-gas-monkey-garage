@@ -27,23 +27,30 @@
       "userName": "adean",
       "date": "2023-04-01",
       "id": 5,
-      "likes": 7,
-      "dislikes": 10
+      "likes": 8,
+      "dislikes": 13
     },
     {
       "message": "yo world",
       "userName": "bdean",
       "date": "2023-04-01",
       "id": 6,
-      "likes": 5,
-      "dislikes": 7
+      "likes": 6,
+      "dislikes": 8
     },
     {
       "message": "Hey!",
       "userName": "kt",
       "date": "2023-04-05",
       "id": 1,
-      "likes": null
+      "likes": 1,
+      "dislikes": null
+    },
+    {
+      "message": "ello guvnuh",
+      "userName": "Aaron",
+      "date": "2023-04-12",
+      "id": 7
     }
   ],
   "tasks": [
