@@ -5,16 +5,13 @@ import { TaskSubmission } from "./tasksForm.js"
 const convertBookingToListElement = (task) => {
 
    return `
-<ul>
-    <li>Finish By: ${task.time} on ${task.date}<br>
+<li class="tasks">
+    On: ${task.date}<br>
     Description: ${task.taskDescription}  <br>
     <button class="task__delete"
     id="tasks--${task.id}">
 Delete
-</button> </li>
-
-</ul>
-`
+</button> </li>`
 
 }
 
@@ -23,11 +20,13 @@ export const Tasks = () => {
     const sortTasks = tasks.sort((a, b) => new Date(a.date) - new Date(b.date))
 
     let html = `
-        <ul>
+    <ul class="taskToDo">
+       
             ${
               sortTasks.map(convertBookingToListElement).join("")
             }
         </ul>
+      
     `
 
     return html

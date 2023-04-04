@@ -1,7 +1,14 @@
-body {
-    background-color:orchid
+.taskForm {
+    background-color:aliceblue
   
-  };
+  }
+
+  .tasks {
+    background-color: aliceblue;
+  }
+  .tasksToDo {
+    background-color: aliceblue;
+  }
     
   #dashboard {
       display: flex;
@@ -23,12 +30,10 @@ body {
   }
   .field {
       font-size: large;
-      color: aliceblue;
+      color: black ;
   }
-  .ol{
-    font-weight: bold;
 
-  }
+
   .task__delete {
    margin:10px;
    margin-left:50px
