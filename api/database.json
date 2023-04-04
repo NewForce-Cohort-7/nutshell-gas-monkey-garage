@@ -33,6 +33,45 @@
     }
   ],
   "images": [],
-  "messages": [],
-  "tasks": []
+  "messages": [
+    {
+      "message": "Hey!",
+      "userName": "kt",
+      "date": "2023-04-05",
+      "id": 1,
+      "likes": null
+    }
+  ],
+  "tasks": [
+    {
+      "taskDescription": "invoice",
+      "date": "2023-04-06",
+      "id": 5
+    },
+    {
+      "taskDescription": "walk dogs",
+      "date": "2023-04-04",
+      "id": 6
+    },
+    {
+      "taskDescription": "wash dishes",
+      "date": "2023-04-05",
+      "id": 12
+    },
+    {
+      "taskDescription": "cook dinner",
+      "date": "2023-04-05",
+      "id": 13
+    },
+    {
+      "taskDescription": "dilly to vet",
+      "date": "2023-05-04",
+      "id": 14
+    },
+    {
+      "taskDescription": "dogs vet",
+      "date": "2023-05-01",
+      "id": 15
+    }
+  ]
 }
