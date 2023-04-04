@@ -90,3 +90,6 @@ h3 {
   }
   
   
+  .messageField textarea {
+    background-color: white;
+  }

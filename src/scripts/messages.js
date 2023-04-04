@@ -10,7 +10,7 @@ export const Messages = () => {
     const dislikes = message.dislikes || 0;
 
     return `<li class="alignMessage">
-              "${message.message}" was posted by ${message.userName}
+              "${message.message}" was posted by <${message.userName}
               <button class="message__delete" id="message--${message.id}">
                 Delete
               </button>

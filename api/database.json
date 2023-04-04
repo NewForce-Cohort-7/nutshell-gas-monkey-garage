@@ -6,6 +6,13 @@
       "url": "wsaz.com",
       "date": "2023-04-04T14:24:11.614Z",
       "id": 1
+    },
+    {
+      "story": "Is the PB&J Sandwich Canceled?",
+      "description": "There is a tweet going viral about whether or not the peanut butter and jelly sandwich made some insensitive comments or not back in 2002.",
+      "url": "foxnews.com",
+      "date": 1680634032703,
+      "id": 2
     }
   ],
   "events": [
@@ -14,18 +21,16 @@
       "date": "2023-04-04",
       "location": "Charleston, WV",
       "id": 1
+    },
+    {
+      "name": "12th Annual City-wide food fight",
+      "date": "2023-05-24",
+      "location": "Your mom's kitchen",
+      "id": 2
     }
   ],
   "images": [],
   "messages": [
-    {
-      "message": "hi world",
-      "userName": "adean",
-      "date": "2023-04-01",
-      "id": 5,
-      "likes": 5,
-      "dislikes": 4
-    },
     {
       "message": "yo world",
       "userName": "bdean",
@@ -38,7 +43,8 @@
       "message": "5",
       "userName": "4",
       "date": "2023-04-05",
-      "id": 7
+      "id": 7,
+      "likes": 1
     },
     {
       "message": "That fire was crazy yo!!!1!",
@@ -46,20 +52,22 @@
       "date": "2023-04-04",
       "id": 8,
       "likes": 10,
-      "dislikes": 2
-
-    } 
+      "dislikes": 3
+    },
+    {
+      "message": "this is wild!!!",
+      "userName": "gigachad420",
+      "date": "2023-04-04",
+      "id": 9,
+      "likes": null,
+      "dislikes": null
+    }
   ],
   "tasks": [
     {
       "taskDescription": "invoice",
       "date": "2023-04-06",
       "id": 5
-    },
-    {
-      "taskDescription": "walk dogs",
-      "date": "2023-04-04",
-      "id": 6
     },
     {
       "taskDescription": "wash dishes",
