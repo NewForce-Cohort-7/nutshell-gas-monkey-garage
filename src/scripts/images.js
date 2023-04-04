@@ -1,7 +1,34 @@
-import { getImages, saveImage, deleteImage } from "./dataaccess";
+import { getImages, saveImage, deleteImage } from "./dataaccess.js";
 
-const images = getImages()
-const mainContainer = document.querySelector("#container")
+const mainContainer = document.querySelector("#dashboard")
+
+export const Images = () => {
+    
+    const images = getImages()
+
+    let html = `
+            ${
+                images.map((image) => {
+                    return `
+                    <div class="images">
+                        <img class="image" id="${image.id}" src="${image.url}"/>
+                    </div>
+
+                    <li>
+                        ${image.caption}
+                        ${image.date}
+                        <button class="image__delete"
+                                id="image--${image.id}">
+                            Delete
+                        </button>
+                    </li>
+                `
+                }).join("")
+            }
+    `
+
+    return html
+}
 
 export const ImageForm = () => {
     let html = `
@@ -11,13 +38,21 @@ export const ImageForm = () => {
             <label class="label" for="imageCaption"><b>Your Caption</b></label>
             <input type="text" name="imageCaption" class="input" />
         </div>
-        <button class="button" id="submitImage"><b>Submit</b></button>`
+        <button class="button" id="submitImage">Submit</button>`
 
     return html
 }
 
 mainContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("image--")) {
+        const [,imageId] = clickEvent.target.id.split("--")
+        deleteImage(parseInt(imageId))
+    }
+})
+
+mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitImage") {
+
         // Get what the user typed into the form fields
         const userUrl = document.querySelector("input[name='imageUrl']").value
         const userCaption = document.querySelector("input[name='imageCaption']").value
@@ -26,7 +61,7 @@ mainContainer.addEventListener("click", clickEvent => {
         const dataToSendToAPI = {
             url: userUrl,
             caption: userCaption,
-            date: new Date.now()
+            date: new Date()
         }
 
         // Send the data to the API for permanent storage
