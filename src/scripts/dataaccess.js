@@ -1,54 +1,3 @@
-// const applicationState = {
-//     news: [],
-//     events: [],
-//     images: [], 
-//     messages: [],
-//     tasks: []
-// }
-
-// const API = "http://localhost:8088"
-// const mainContainer = document.querySelector("#dashboard")
-
-// export const fetchMessages = () => {
-//     return fetch(`${API}/messages`)
-//     .then(response => response.json())
-//     .then(
-//         (serviceMessages) => {
-//                 // Store the external state in application state
-//                 applicationState.messages = serviceMessages
-//             }
-//             )
-//         }
-
-//         export const getMessages = () => {
-//             return applicationState.messages.map(message => ({...message}))
-//         }
-
-
-//         export const sendMessage = (userServicemessage) => {
-//             const fetchOptions = {
-//                 method: "POST",
-//                 headers: {
-//                     "Content-Type": "application/json"
-//                 },
-//                 body: JSON.stringify(userServicemessage)
-//             }
-
-//             return fetch(`${API}/messages`, fetchOptions)
-//         .then(response => response.json())
-//         .then(() => {
-//             mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
-//         })
-// } 
-
-// export const deleteMessage = (id) => {
-//     return fetch(`${API}/messages/${id}`, { method: "DELETE" })
-//         .then(
-//             () => {
-//                 mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
-//             }
-//         )
-// }
 
 const applicationState = {
   news: [],
@@ -126,195 +75,6 @@ export const updateDislikeCount = (id) => {
   return fetch(`${API}/messages/${id}`, fetchOptions);
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //events
 export const fetchEvents = () => {
     return fetch(`${API}/events`)
@@ -356,6 +116,47 @@ export const deleteEvent = (id) => {
         )
 }
 
+
+
+//Images Start
+export const fetchImages = () => {
+    return fetch(`${API}/images`)
+        .then(response => response.json())
+        .then(
+            (imageArray) => {
+            applicationState.images = imageArray
+    })
+}
+
+export const saveImage = (userImage) => {
+    const saveOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userImage)
+    }
+        
+    return fetch(`${API}/images`, saveOptions)
+        .then(response => response.json())
+        .then(() => {
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        })
+}
+
+export const deleteImage = (id) => {
+    return fetch(`${API}/images/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
+
+export const getImages = () => {
+    return applicationState.images.map(image => ({...image}))
+}
+//Images End
 
 //Tasks API and Exports - KT
 //task finished
@@ -413,4 +214,4 @@ export const deleteTasks = (id) => {
             mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
         }
     )
-    }
+}
