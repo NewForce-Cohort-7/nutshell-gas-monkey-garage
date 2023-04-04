@@ -17,12 +17,8 @@ const convertEventToListElement = (eventObject) => {
 
     return `
     <li class="eventComplete">
-    ${
-        eventObject.name
-    } 
-    <button class="event__delete" id="event--${
-        eventObject.id
-    }">-
+    ${eventObject.name} 
+    <button class="event__delete" id="event--${eventObject.id}">-
     </button>
     
     </li>`
@@ -145,25 +141,35 @@ export const Events = () => {
     }
     
     console.log(january)
-    // console.log(february)
-    // console.log(march)
-    // console.log(april)
-    // console.log(may)
-    // console.log(june)
-    // console.log(july)
-    // console.log(august)
-    // console.log(september)
-    // console.log(october)
-    // console.log(november)
-    // console.log(december)
 
-    let html = `
-        <ul class="eventsList"> 
-            ${
-        sortEvents.map(convertEventToListElement).join("")
-    }
-        </ul>
-    `
+    let html = `<section class="eventsList">
+
+    <h1 class="month" id="january">January</h1>
+    <div>${january.map(convertEventToListElement).join("")}</div>
+    <h1 class="month" id="february">February</h1>
+    <div>${february.map(convertEventToListElement).join("")}</div>
+    <h1 class="month" id="march">March</h1>
+    <div>${march.map(convertEventToListElement).join("")}</div>
+    <h1 class="month" id="april">April</h1>
+    <div>${april.map(convertEventToListElement).join("")}</div>
+    <h1 class="month" id="may">May</h1>
+    <div>${may.map(convertEventToListElement).join("")}</div>
+    <h1 class="month" id="june">June</h1>
+    <div>${june.map(convertEventToListElement).join("")}</div>
+    <h1 class="month" id="july">July</h1>
+    <div>${july.map(convertEventToListElement).join("")}</div>
+    <h1 class="month" id="august">August</h1>
+    <div>${august.map(convertEventToListElement).join("")}</div>
+    <h1 class="month" id="september">September</h1>
+    <div>${september.map(convertEventToListElement).join("")}</div>
+    <h1 class="month" id="october">October</h1>
+    <div>${october.map(convertEventToListElement).join("")}</div>
+    <h1 class="month" id="november">November</h1>
+    <div>${november.map(convertEventToListElement).join("")}</div>
+    <h1 class="month" id="december">December</h1>
+    <div>${december.map(convertEventToListElement).join("")}</div>
+
+</section>`
 
     return html
 }
