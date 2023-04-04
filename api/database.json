@@ -47,8 +47,14 @@
       "userName": "bdean",
       "date": "2023-04-01",
       "id": 6,
-      "likes": null,
-      "dislikes": null
+      "likes": 1,
+      "dislikes": 1
+    },
+    {
+      "message": "5",
+      "userName": "4",
+      "date": "2023-04-05",
+      "id": 7
     }
   ],
   "tasks": []
