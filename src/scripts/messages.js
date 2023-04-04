@@ -1,65 +1,3 @@
-// import { getMessages, deleteMessage, updateLikeCount, updateDislikeCount } from "./dataaccess.js";
-
-// export const Messages = () => {
-//   const messages = getMessages().sort((a, b) => new Date(a.date) - new Date(b.date));
-
-//   let html = '<ul>';
-
-//   const convertMessageToListElement = messages.map((message) => {
-//     const likes = message.likes || 0;
-//     const dislikes = message.dislikes || 0;
-
-//     return `<li>
-//               "${message.message}" was posted by ${message.userName}
-//               <button class="message__delete" id="message--${message.id}">
-//                 Delete
-//               </button>
-//               <button class="message__like" id="like--${message.id}">
-//   <i class="material-icons">thumb_up</i> ${message.likes}
-// </button>
-
-// <button class="message__dislike" id="dislike--${message.id}">
-//   <i class="material-icons">thumb_down</i> ${message.dislikes}
-// </button>
-
-//             </li>`;
-//   });
-
-//   html += convertMessageToListElement.join("");
-//   html += "</ul>";
-
-//   return html;
-// };
-
-// const mainContainer = document.querySelector("#dashboard");
-
-// mainContainer.addEventListener("click", (click) => {
-//   if (click.target.id.startsWith("message--")) {
-//     const [, messageId] = click.target.id.split("--");
-//     deleteMessage(parseInt(messageId));
-//   } else if (click.target.classList.contains("message__like")) {
-//     const [, messageId] = click.target.id.split("--");
-//     updateLikeCount(parseInt(messageId)).then(() => {
-//       const messageElement = click.target.parentElement;
-//       const likeButton = messageElement.querySelector(".message__like");
-//       const [likeText, likeCount] = likeButton.textContent.split("(");
-//       likeButton.textContent = `${likeText}(${parseInt(likeCount.trim()) + 1})`;
-//     });
-//   }
-  
-//   else if (click.target.classList.contains("message__dislike")) {
-//     const [, messageId] = click.target.id.split("--");
-//     updateDislikeCount(parseInt(messageId)).then(() => {
-//       const messageElement = click.target.parentElement;
-//       const dislikeButton = messageElement.querySelector(".message__dislike");
-//       const [dislikeText, dislikeCount] = dislikeButton.textContent.split("(");
-//       dislikeButton.textContent = `${dislikeText}(${parseInt(dislikeCount.trim()) + 1})`;
-//     });
-//   }
-  
-  
-// });
-
 import { getMessages, deleteMessage, updateLikeCount, updateDislikeCount } from "./dataaccess.js";
 
 export const Messages = () => {
@@ -71,19 +9,24 @@ export const Messages = () => {
     const likes = message.likes || 0;
     const dislikes = message.dislikes || 0;
 
-    return `<li class="alignMessage">
-              "${message.message}" was posted by ${message.userName}
-              <button class="message__delete" id="message--${message.id}">
-                Delete
-              </button>
-              <button class="message__like" id="like--${message.id}">
+    return ` 
+    <li class="alignMessage">
+              <div class ="border">${message.message}</div>
+              <div class ="postSize"> Posted by ${message.userName} on ${message.date} </div>
+              <div title="Like"> <button class="message__like" id="like--${message.id}">
               
               </button>  
-               <div class="messageLike"> (${likes})</div> 
-              <button class="message__dislike" id="dislike--${message.id}">
+              <div class="messageLike"> (${likes})</div> </div> 
+             <div title="Dislike"> <button class="message__dislike" id="dislike--${message.id}">
               </button>
-                <div class="messageDislike"> (${dislikes}) </div>
-            </li>`;
+             <div class="messageDislike"> (${dislikes}) </div> </div>
+              <div title="DELETE">
+              <button class="message__delete" id="message--${message.id}">
+                X
+              </button> 
+              </div>
+            </li>
+            `;
   });
 
   html += convertMessageToListElement.join("");
