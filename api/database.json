@@ -27,7 +27,7 @@
       "userName": "adean",
       "date": "2023-04-01",
       "id": 5,
-      "likes": 8,
+      "likes": 9,
       "dislikes": 13
     },
     {
@@ -36,21 +36,7 @@
       "date": "2023-04-01",
       "id": 6,
       "likes": 6,
-      "dislikes": 8
-    },
-    {
-      "message": "Hey!",
-      "userName": "kt",
-      "date": "2023-04-05",
-      "id": 1,
-      "likes": 1,
-      "dislikes": null
-    },
-    {
-      "message": "ello guvnuh",
-      "userName": "Aaron",
-      "date": "2023-04-12",
-      "id": 7
+      "dislikes": 9
     }
   ],
   "tasks": [

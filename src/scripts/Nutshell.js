@@ -1,7 +1,7 @@
 import { Messages } from "./messages.js"
 import { userMessage } from "./userMessage.js"
 import { Events, OpenForm } from "./events.js"
-import { Tasks, openTask} from "./tasks.js"
+import { Tasks, openTask, finishedTasks} from "./tasks.js"
 
 export const Nutshell = () => {
       return `
@@ -19,8 +19,9 @@ export const Nutshell = () => {
       </section>
       <section class="tasks">
             <h2>Tasks</h2>
-            ${Tasks()}
             ${openTask()}
+            ${Tasks()}
+            ${finishedTasks}
             </section>`
       }
 

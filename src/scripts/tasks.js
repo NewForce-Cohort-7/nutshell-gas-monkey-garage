@@ -16,9 +16,10 @@ const converttaskToListElement = (task) => {
 export const Tasks = () => {
     const tasks = getTasks()
     const sortTasks = tasks.sort((a, b) => new Date(a.date) - new Date(b.date))
+    if (!tasks.comlpete){
 
-    let html = `
-    <ul class="taskToDo">
+    return `
+    <ul class="taskToDo"><h2> To-Do List</h2>
        
             ${
               sortTasks.map(converttaskToListElement).join("")
@@ -26,11 +27,26 @@ export const Tasks = () => {
         </ul>
       
     `
-
-    return html
+        }
 }
 
+export const finishedTasks = () => {
+   const tasks = getTasks()
+    const sortTasks = tasks.sort((a, b) => new Date(a.date) - new Date(b.date))
+    if (tasks.comlpete){
+    return `
+    <ul class="taskToDo"><h2> Finished </h2>
+       
+            ${
+                sortTasks.map(converttaskToListElement).join("")
+            } ${new Date}
+        </ul>
+      
+    `
 
+
+}
+    }
 
 /*const mainContainer = document.querySelector("#dashboard")
 mainContainer.addEventListener("click", click => {
