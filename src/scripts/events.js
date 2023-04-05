@@ -24,6 +24,8 @@ const convertEventToListElement = (eventObject) => {
     </li>`
 }
 
+//NOT QUITE DONE WITH TICKET 2: EVENTS BY MONTH
+
 export const Events = () => {
     const events = getEvents()
     const sortEvents = events.sort((a, b) => new Date(a.date) - new Date(b.date))
@@ -139,13 +141,11 @@ export const Events = () => {
             december.push(singleEvent)
         }
     }
-    
-    console.log(january)
 
     let html = `<section class="eventsList">
 
     <h1 class="month" id="january">January</h1>
-    <div>${january.map(convertEventToListElement).join("")}</div>
+    <div>${january.map(convertEventToListElement).join("")} (${(january.map(convertEventToListElement).length)})</div>
     <h1 class="month" id="february">February</h1>
     <div>${february.map(convertEventToListElement).join("")}</div>
     <h1 class="month" id="march">March</h1>
