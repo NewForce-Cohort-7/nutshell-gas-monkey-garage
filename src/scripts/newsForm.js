@@ -43,7 +43,8 @@ export const NewsForm = () => {
         </div>
         <div class="option">
         <label class="label" for="articleTags">Select a Tag</label>
-        <input type="option" name="articleTags" class="option" >
+        <input type="select" name="articleTags" class="select" >
+        </div>
         
         <button class="button" id="saveArticle">Save Article</button>
     `

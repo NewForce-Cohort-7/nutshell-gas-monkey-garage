@@ -1,4 +1,4 @@
-import { getNews, deleteNews, getTags } from "./dataaccess.js";
+import { getNews, deleteNews, getTags, articleTagged } from "./dataaccess.js";
 import { NewsForm } from "./newsForm.js";
 
 export const News = () => { 
@@ -12,10 +12,20 @@ export const News = () => {
     <ul>
         ${
             stories.map(story => { 
-                return `<li><h2>${story.story}</h2> ${story.description} <h3><a href="https://www.youtube.com/watch?v=l2m4VOT1Tio">${story.url}</a></h3> <h4>Posted on: ${new Date(story.date).toLocaleString()}</h4> <h4><b>Tags: ${tags.tag}</b></h4>  <button class="news__delete" id="news--${story.id}">- </button>
+                return `<li><h2>${story.story}</h2> ${story.description} <h3><a href="https://www.youtube.com/watch?v=l2m4VOT1Tio">${story.url}</a></h3> <h4>Posted on: ${new Date(story.date).toLocaleString()}</h4> <button class="news__delete" id="news--${story.id}">- </button>
+                <select class="tags" id="tags>
+                <option value="">Choose</option>
+                ${
+                    tags.map(
+                        tag => {
+                            return `<option value="${story.id}--${tag.id}">${tag.tag}</option>`
+                        }
+                    ).join("")
+                }
+                </select>
             </li>`}).join("")
-        }
         
+            }
         </ul>`
 
         return html
@@ -41,3 +51,19 @@ mainContainer.addEventListener("click", click => {
         
     }
 })
+
+mainContainer.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.id === "tags") {
+            const [storyId, tagId] = event.target.value.split("--")
+
+            const taggedArticle = {
+                storyId: parseInt(storyId),
+                tagId: parseInt(tagId),
+            }
+
+            articleTagged(taggedArticle)
+        }
+    }
+)

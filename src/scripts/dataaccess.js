@@ -117,6 +117,23 @@ export const sendNews = (userNewsAddition) => {
         })
 }
 
+export const articleTagged = (taggedArticle) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(taggedArticle)
+    }
+
+    return fetch(`${API}/tags`, fetchOptions)
+    .then(response => response.json())
+    .then(()=> {
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+    })
+}
+
+
 //events
 export const fetchEvents = () => {
     return fetch(`${API}/events`)

@@ -43,6 +43,9 @@ h3 {
     font-family: 'Times New Roman', Times, serif;
 }
 
+.tags{
+  background-color: white;
+}
 
 .messageField {
     display: flex;
