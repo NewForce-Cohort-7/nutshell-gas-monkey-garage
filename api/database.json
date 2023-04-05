@@ -5,6 +5,7 @@
       "description": "Community left stunned after a massive fire broke out on their block",
       "url": "wsaz.com",
       "date": "2023-04-04T14:24:11.614Z",
+      "tagId": 1,
       "id": 1
     },
     {
@@ -12,7 +13,16 @@
       "description": "There is a tweet going viral about whether or not the peanut butter and jelly sandwich made some insensitive comments or not back in 2002.",
       "url": "foxnews.com",
       "date": 1680634032703,
+      "tagId": 2,
       "id": 2
+    },
+    {
+      "story": "Local woman married into Royal Family",
+      "description": "A commoner is set to marry the Oba of Igbo-Benue",
+      "url": "ibtoday.com",
+      "date": 1680704324986,
+      "tagId": 2,
+      "id": 3
     }
   ],
   "events": [
@@ -99,6 +109,20 @@
       "taskDescription": "dogs vet",
       "date": "2023-05-01",
       "id": 15
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "tag": "local"
+    },
+    {
+      "id": 2,
+      "tag": "politics"
+    },
+    {
+      "id": 3,
+      "tag": "funny"
     }
   ]
 }

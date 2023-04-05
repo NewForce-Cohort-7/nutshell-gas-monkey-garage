@@ -1,5 +1,5 @@
 import { Nutshell } from "./Nutshell.js"
-import { fetchEvents, fetchTasks, fetchMessages, fetchImages, fetchNews } from "./dataaccess.js"
+import { fetchEvents, fetchTasks, fetchMessages, fetchImages, fetchNews, fetchTags } from "./dataaccess.js"
 
 
 const dashboard = document.querySelector("#dashboard")
@@ -10,6 +10,7 @@ const render = () => {
     fetchNews()
     fetchImages()
     fetchTasks()
+    fetchTags()
         .then(
             () => {
                 dashboard.innerHTML = Nutshell()

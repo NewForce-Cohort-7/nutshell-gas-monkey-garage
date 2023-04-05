@@ -10,7 +10,8 @@ export const News = () => {
     let html = ` 
     <ul>
         ${
-            stories.map(story => { return `<li><h2>${story.story}</h2> ${story.description} <h3><a href="https://www.youtube.com/watch?v=l2m4VOT1Tio">${story.url}</a></h3> <h4>Posted on: ${new Date(story.date).toLocaleString()}</h4>  <button class="news__delete" id="news--${story.id}">- </button>
+            stories.map(story => { 
+                return `<li><h2>${story.story}</h2> ${story.description} <h3><a href="https://www.youtube.com/watch?v=l2m4VOT1Tio">${story.url}</a></h3> <h4>Posted on: ${new Date(story.date).toLocaleString()}</h4> <h4><b>Tags: ${story.tagId}</b></h4>  <button class="news__delete" id="news--${story.id}">- </button>
             </li>`}).join("")
         }
         

@@ -83,6 +83,20 @@ export const fetchNews = () => {
     )
 }
 
+export const fetchTags = () => {
+    return fetch(`${API}/tags`)
+    .then(response => response.json())
+    .then(
+        (data) => {
+            applicationState.tags = data
+        }
+    )
+}
+
+export const getTags = () => {
+    return applicationState.tags.map((singleTag) => ({...singleTag}))
+}
+
 export const getNews = () => {
     return applicationState.news.map((singleNewsStory) => ({...singleNewsStory}))
 };
