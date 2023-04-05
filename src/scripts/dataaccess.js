@@ -3,7 +3,8 @@ const applicationState = {
     events: [],
     images: [], 
     messages: [],
-    tasks: []
+    tasks: [],
+    dadJoke: []
 }
 const API = "http://localhost:8088"
 
