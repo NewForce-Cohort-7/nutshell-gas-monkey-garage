@@ -83,21 +83,6 @@
   ],
   "tasks": [
     {
-      "taskDescription": "invoice",
-      "date": "2023-04-06",
-      "id": 5
-    },
-    {
-      "taskDescription": "wash dishes",
-      "date": "2023-04-05",
-      "id": 12
-    },
-    {
-      "taskDescription": "cook dinner",
-      "date": "2023-04-05",
-      "id": 13
-    },
-    {
       "taskDescription": "dogs vet",
       "date": "2023-05-01",
       "id": 15,
@@ -112,7 +97,7 @@
     {
       "taskDescription": "dig some ramps",
       "date": "2023-04-07",
-      "complete": false,
+      "complete": true,
       "id": 17
     },
     {
@@ -120,6 +105,36 @@
       "date": "2023-04-08",
       "complete": false,
       "id": 18
+    },
+    {
+      "taskDescription": "take dilly to the vet",
+      "date": "2023-04-24",
+      "complete": false,
+      "id": 19
+    },
+    {
+      "taskDescription": "rabbits to the vet",
+      "date": "2023-04-20",
+      "complete": true,
+      "id": 20
+    },
+    {
+      "taskDescription": "wash dishes",
+      "date": "2023-04-05",
+      "complete": false,
+      "id": 21
+    },
+    {
+      "taskDescription": "fry some potatoes",
+      "date": "2023-04-06",
+      "complete": false,
+      "id": 22
+    },
+    {
+      "taskDescription": "Get some coffee!",
+      "date": "2023-04-05",
+      "complete": false,
+      "id": 23
     }
   ]
 }
