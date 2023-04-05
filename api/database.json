@@ -49,31 +49,7 @@
       "id": 3
     }
   ],
-  "messages": [
-    {
-      "message": "yo world",
-      "userName": "bdean",
-      "date": "2023-04-01",
-      "id": 6,
-      "likes": 1,
-      "dislikes": 1
-    },
-    {
-      "message": "5",
-      "userName": "4",
-      "date": "2023-04-05",
-      "id": 7,
-      "likes": 1
-    },
-    {
-      "message": "That fire was crazy yo!!!1!",
-      "userName": "wvunotgood1837",
-      "date": "2023-04-04",
-      "id": 8,
-      "likes": 10,
-      "dislikes": 3
-    }
-  ],
+  "messages": [],
   "tasks": [
     {
       "taskDescription": "invoice",
