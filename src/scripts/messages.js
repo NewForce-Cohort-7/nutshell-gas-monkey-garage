@@ -41,14 +41,20 @@ mainContainer.addEventListener("click", (click) => {
   if (click.target.id.startsWith("message--")) {
     const [, messageId] = click.target.id.split("--");
     deleteMessage(parseInt(messageId));
-  } else if (click.target.classList.contains("message__like")) {
+ 
+  }
+   
+  else if (click.target.classList.contains("message__like")) {
     const [, messageId] = click.target.id.split("--");
     updateLikeCount(parseInt(messageId));
     const messageElement = click.target.parentElement;
     const likeButton = messageElement.querySelector(".messageLike");
     const [likeText, likeCount] = likeButton.textContent.split("(");
     likeButton.textContent = `${likeText}(${parseInt(likeCount) + 1})`;
-  } else if (click.target.classList.contains("message__dislike")) {
+  
+  }
+  
+  else if (click.target.classList.contains("message__dislike")) {
     const [, messageId] = click.target.id.split("--");
     updateDislikeCount(parseInt(messageId));
     const messageElement = click.target.parentElement;
