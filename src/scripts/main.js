@@ -10,9 +10,8 @@ const render = () => {
     fetchNews()
     fetchImages()
     fetchTasks()
-        .then(
-            () => {
-                dashboard.innerHTML = Nutshell()
+    .then(() => {
+            dashboard.innerHTML = Nutshell()
       
         }
     )
