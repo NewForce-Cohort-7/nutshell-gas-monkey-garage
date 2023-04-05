@@ -28,7 +28,8 @@ mainContainer.addEventListener("click", clickEvent => {
         const userDate = document.querySelector("input[name='date']").value
         const dataToSendToAPI = {
             taskDescription: userTaskDescription,
-            date: userDate
+            date: userDate,
+            complete: false
         }
         sendTasks(dataToSendToAPI)
         mainContainer.dispatchEvent(new CustomEvent ("stateChanged"))

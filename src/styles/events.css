@@ -44,8 +44,15 @@ button.event__delete{
 /* left off working on the form when it pops up */
 /*
 .eventField{
-    padding-top: 1em;
+    padding-top: .5em;
     padding-left: 1em;
     margin-top: .75em;
     font-size: 1.25em;
-} */
+}
+
+button#saveEvent{
+    background-color: lightgreen;
+    border: solid black .1em;
+    padding: 1em;
+    margin: 1em;
+}

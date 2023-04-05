@@ -3,7 +3,7 @@ import { userMessage } from "./userMessage.js"
 import { Events, OpenForm } from "./events.js"
 import { News, newArticle } from "./news.js"
 import { OpenImageForm, Images } from "./images.js"
-import { Tasks, openTask} from "./tasks.js"
+import { Tasks, openTask, finishedTasks} from "./tasks.js"
 
 export const Nutshell = () => {
 
@@ -33,10 +33,20 @@ export const Nutshell = () => {
                   <section class="serviceForm">
                         ${Messages()}
                   </section>
-                  <section class="tasks">
-                        <h2>Tasks</h2>
-                        ${Tasks()}
+                  <section class="newTask">
+                        <h2>My Tasks</h2>
                         ${openTask()}
+                  </section>
+                  <section class="tasks">
+                        <section class="tasksToDo">
+                              <h2> To-Do List </h2> 
+                              ${Tasks()}
+                        </section>
+                        <section class="finishedTasks">
+                              <h2> Done! </h2>
+                              ${finishedTasks()}
+                        </section>
+                        </section>
                   </section>
             </div>
             
@@ -54,5 +64,5 @@ export const Nutshell = () => {
             </div>
       </div>
 </div>
-      `
+`
 }
