@@ -17,16 +17,40 @@
   ],
   "events": [
     {
-      "name": "Huge fireworks display!!!!",
-      "date": "2023-04-04",
-      "location": "Charleston, WV",
-      "id": 1
-    },
-    {
       "name": "12th Annual City-wide food fight",
       "date": "2023-05-24",
       "location": "Your mom's kitchen",
       "id": 2
+    },
+    {
+      "name": "Snoop Dogg Concert",
+      "date": "2023-04-20",
+      "location": "Ohio Stadium",
+      "id": 4
+    },
+    {
+      "name": "Tonka sponsored demolition derby",
+      "date": "2023-04-08",
+      "location": "Louisville, KY",
+      "id": 5
+    },
+    {
+      "name": "Monster Truck on INDY Raceway",
+      "date": "2023-04-23",
+      "location": "Indianapolis",
+      "id": 6
+    },
+    {
+      "name": "Iron Man vs Monster Trucks",
+      "date": "2023-04-02",
+      "location": "Orange, TX",
+      "id": 7
+    },
+    {
+      "name": "Hagrid meet and greet",
+      "date": "2023-05-02",
+      "location": "Hogwarts",
+      "id": 8
     }
   ],
   "images": [
