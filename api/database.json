@@ -145,7 +145,7 @@
     {
       "taskDescription": "wash dishes",
       "date": "2023-04-05",
-      "complete": false,
+      "complete": true,
       "id": 21
     },
     {

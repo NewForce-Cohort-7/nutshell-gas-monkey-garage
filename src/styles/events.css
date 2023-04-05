@@ -1,13 +1,14 @@
 
 .events{
     font-size: 1.25em;
-    background-color: aqua;
+    background-color: rgb(238,232,170);
 }
 
 .events h2 {
     padding-left: .5em;
     font-family: fantasy, copperplate; 
-    font-size: 2em
+    font-size: 2em;
+    background-color: rgb(238,232,170)
 }
 
 .eventsList li:first-child {
@@ -39,7 +40,6 @@ button.event__delete{
     margin-top: .75em;
 }
 
-/* left off working on the form when it pops up */
 .eventField{
     padding-top: .5em;
     padding-left: 1em;

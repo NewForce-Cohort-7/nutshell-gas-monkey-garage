@@ -180,3 +180,16 @@ mainContainer.addEventListener("click", click => {
         mainContainer.innerHTML += EventForm()
     }
 })
+
+// fetch("http://www.boredapi.com/api/activity/")
+//     .then(
+//         (response) => {
+//             const parsedData = response.json()
+//             return parsedData
+//         }
+//     )
+//     .then(
+//         (activitiesData) => {
+//             console.log(activitiesData)
+//         }
+//     )
