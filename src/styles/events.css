@@ -1,5 +1,7 @@
+/* {
+    /* border: lightcoral dotted 1px; */
 
-.events{
+/* .events{
     font-size: 1.25em;
     background-color: aqua;
 }
@@ -40,11 +42,12 @@ button.event__delete{
 }
 
 /* left off working on the form when it pops up */
+/*
 .eventField{
     padding-top: .5em;
     padding-left: 1em;
-    margin-top: .25em;
-    font-size: 1em;
+    margin-top: .75em;
+    font-size: 1.25em;
 }
 
 button#saveEvent{
