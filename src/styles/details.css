@@ -1,4 +1,18 @@
-.label {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .label {
     display: flex;
     flex-direction: column;
     font-size: 24px;
@@ -61,7 +75,7 @@ h3 {
     display: flex;
     overflow-y: auto;
     justify-content:first baseline
-  } */
+  } 
 
   .border {
     position: relative;
@@ -116,6 +130,7 @@ h3 {
   }
 
   /* Style the thumbs-up button */
+  /*
 .message__like {background-image:url("https://clipground.com/images/thumbs-up-emoji-png-1.jpg") ;
     
     background-size: cover;
@@ -125,6 +140,7 @@ h3 {
    }
   
   /* Style the thumbs-down button */
+  /*
   .message__dislike {
     background-image:url("https://clipartcraft.com/images/emoji-clipart-thumbs-up-10.png") ;
     
@@ -146,4 +162,4 @@ h3 {
     height: 15px;
     border: none;
     font-size: xx-small;
-  }
+  } */
