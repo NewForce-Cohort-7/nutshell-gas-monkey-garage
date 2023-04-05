@@ -190,6 +190,7 @@ export const getImages = () => {
 //Tasks API and Exports - KT
 //task finished
 export const taskComplete = (id) => {
+const mainContainer = document.querySelector("#dashboard")
   fetch(`${API}/tasks/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
@@ -200,7 +201,7 @@ export const taskComplete = (id) => {
       },
     })
       .then((response) => response.json())
-      .then(() => dashboard.dispatchEvent(new CustomEvent("stateChanged")));
+      .then(() => mainContainer.dispatchEvent(new CustomEvent("stateChanged")));
 }
 //get the Tasks from API and convert it into usable data
 export const fetchTasks = () => {

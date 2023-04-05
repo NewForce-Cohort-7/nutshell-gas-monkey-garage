@@ -20,20 +20,28 @@ export const Nutshell = () => {
 <section class="serviceForm">
       ${Messages()}
       </section>
-      <section class="events">
+<section class="events">
             <h2>Events</h2>
             ${Events()}
             ${OpenForm()}
       </section>
-      <section class="images">
+<section class="images">
             <h2>Images</h2>
             ${Images()}
             ${OpenImageForm()}
       </section>
+      <section class="newTask">
+      <h2>My Tasks</h2>
+      ${openTask()}
+      </section>
       <section class="tasks">
-            <h2>Tasks</h2>
-            ${openTask()}
+            <section class="tasksToDo">
+            <h2> To-Do List </h2> 
             ${Tasks()}
+            </section>
+      <section class="finishedTasks">
+            <h2> Done! </h2>
             ${finishedTasks()}
-            </section>`
+      </section>
+      </section>`
 }
