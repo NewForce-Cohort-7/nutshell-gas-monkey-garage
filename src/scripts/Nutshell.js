@@ -1,16 +1,23 @@
 import { Messages } from "./messages.js"
 import { userMessage } from "./userMessage.js"
 import { Events, OpenForm } from "./events.js"
+import { News, newArticle } from "./news.js"
 import { OpenImageForm, ImageForm, Images } from "./images.js"
 import { Tasks, openTask, finishedTasks} from "./tasks.js"
 
 export const Nutshell = () => {
-      return `
-      <h1>Nutshell</h1>
-      <section class="userMessage">
+
+  return `
+  <h1>News for the Astute</h1>
+<section class="news">
+  ${News()} 
+  ${newArticle()}
+</section>
+
+<section class="userMessage">
       ${userMessage()}
-      </section>
-      <section class="serviceForm">
+</section>
+<section class="serviceForm">
       ${Messages()}
       </section>
       <section class="events">

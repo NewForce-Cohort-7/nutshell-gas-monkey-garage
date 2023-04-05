@@ -1,3 +1,47 @@
+.label {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+}
+
+.input {
+    width: 550px;
+    background-color: white;
+}
+
+.button {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: green;
+    font-size: 20px;
+    color: white;
+}
+
+.news__delete {
+    background-color: red;
+    color: white;
+}
+
+.newsForm h2 {
+    background-color: lightgreen;
+    width: 550px;
+}
+
+h1 {
+    background-color: lightgreen;
+    width: 550px;
+}
+
+
+h3 {
+    font-size: 12px;
+}
+
+#newArticle {
+    background-color: green;
+    font-size: 20px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
 
 
 .messageField {
@@ -88,7 +132,12 @@
   }
 
   
-  .message__delete {
+  
+  .messageField textarea {
+    background-color: white;
+  }
+  
+.message__delete {
     background-color: rgb(228, 16, 16);
     width: 15px;
     height: 15px;
