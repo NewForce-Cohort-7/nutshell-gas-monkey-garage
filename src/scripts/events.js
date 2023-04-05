@@ -14,7 +14,7 @@ mainContainer.addEventListener("click", click => {
 
 // they should see all of their events sorted into months, with a heading for each month and the total number of events in that month in parentheses beside the heading
 const convertEventToListElement = (eventObject) => {
-
+    
     return `
     <li class="eventComplete">
     ${eventObject.name} 
@@ -24,7 +24,6 @@ const convertEventToListElement = (eventObject) => {
     </li>`
 }
 
-//NOT QUITE DONE WITH TICKET 2: EVENTS BY MONTH
 
 export const Events = () => {
     const events = getEvents()
@@ -45,10 +44,8 @@ export const Events = () => {
     
 //January
     for (const singleEvent of sortEvents) {
-        console.log(singleEvent.date)
         const d = new Date(singleEvent.date);
         let month = d.getMonth();
-        console.log(month)
         if (month === 0) {
             january.push(singleEvent)
         }
@@ -144,29 +141,29 @@ export const Events = () => {
 
     let html = `<section class="eventsList">
 
-    <h1 class="month" id="january">January</h1>
-    <div>${january.map(convertEventToListElement).join("")} (${(january.map(convertEventToListElement).length)})</div>
-    <h1 class="month" id="february">February</h1>
+    <h1 class="month" id="january">January (${(january.map(convertEventToListElement).length)})</h1>
+    <div>${january.map(convertEventToListElement).join("")}</div>
+    <h1 class="month" id="february">February (${(february.map(convertEventToListElement).length)})</h1>
     <div>${february.map(convertEventToListElement).join("")}</div>
-    <h1 class="month" id="march">March</h1>
+    <h1 class="month" id="march">March (${(march.map(convertEventToListElement).length)})</h1>
     <div>${march.map(convertEventToListElement).join("")}</div>
-    <h1 class="month" id="april">April</h1>
+    <h1 class="month" id="april">April  (${(april.map(convertEventToListElement).length)})</h1>
     <div>${april.map(convertEventToListElement).join("")}</div>
-    <h1 class="month" id="may">May</h1>
+    <h1 class="month" id="may">May (${(may.map(convertEventToListElement).length)})</h1>
     <div>${may.map(convertEventToListElement).join("")}</div>
-    <h1 class="month" id="june">June</h1>
+    <h1 class="month" id="june">June (${(june.map(convertEventToListElement).length)})</h1>
     <div>${june.map(convertEventToListElement).join("")}</div>
-    <h1 class="month" id="july">July</h1>
+    <h1 class="month" id="july">July (${(july.map(convertEventToListElement).length)})</h1>
     <div>${july.map(convertEventToListElement).join("")}</div>
-    <h1 class="month" id="august">August</h1>
+    <h1 class="month" id="august">August (${(august.map(convertEventToListElement).length)})</h1>
     <div>${august.map(convertEventToListElement).join("")}</div>
-    <h1 class="month" id="september">September</h1>
+    <h1 class="month" id="september">September (${(september.map(convertEventToListElement).length)})</h1>
     <div>${september.map(convertEventToListElement).join("")}</div>
-    <h1 class="month" id="october">October</h1>
+    <h1 class="month" id="october">October (${(october.map(convertEventToListElement).length)})</h1>
     <div>${october.map(convertEventToListElement).join("")}</div>
-    <h1 class="month" id="november">November</h1>
+    <h1 class="month" id="november">November (${(november.map(convertEventToListElement).length)})</h1>
     <div>${november.map(convertEventToListElement).join("")}</div>
-    <h1 class="month" id="december">December</h1>
+    <h1 class="month" id="december">December (${(december.map(convertEventToListElement).length)})</h1>
     <div>${december.map(convertEventToListElement).join("")}</div>
 
 </section>`
