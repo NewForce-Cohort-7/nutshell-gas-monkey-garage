@@ -3,35 +3,32 @@
   
   }
 
+ .newTask {
+  background-color: aliceblue;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  display: flex;
+  flex-direction: column
+ }
+ 
   .tasks {
     background-color: aliceblue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
+    display: flex;
+    flex-direction: row
   }
   .tasksToDo {
     background-color: aliceblue;
+    display: list-item
   }
-    
-  #dashboard {
-      display: flex;
-      flex-direction: column;
-      
-  
-      }
-  .header {
-    background-image: linear-gradient(
-      to bottom,
-      rgba(207, 172, 248, 0.5),
-      rgba(8, 8, 125, 0.5)
-    );
-    font-size: 50px;
-    padding: 50px;
-  
-    color: rgb(253, 253, 253);
-    text-align: center;
-  }
+ 
+ .finishedTasks {
+  background-color: aliceblue;
+
+ }
   .field {
-      font-size: large;
+      font-size: medium;
       color: black ;
   }
 
@@ -63,13 +60,14 @@
   #newTaskButton {
      
     background-color: #509be5;
-    font-size: 16px;
+    font-size: 14px;
     color: white;
     text-align: center;  
     transition-duration: 0.4s;
     border-radius: 8px;
     padding: 10px;
-    margin-top: 30px
+    margin: 30px;
+    max-width: 150px;
 }
 #newTaskButton:hover {background-color: #0a5bac}
 
