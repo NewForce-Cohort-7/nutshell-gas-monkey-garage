@@ -1,6 +1,17 @@
 import { getTasks, deleteTasks, taskComplete } from "./dataaccess.js"
 import { TaskSubmission } from "./tasksForm.js"
 
+export const numCompleted = () => {
+    const tasks = getTasks()
+    const countCompleted = tasks.filter(task=> task.complete === true).length
+    return countCompleted
+}
+    
+ export const numToDo =() => {
+    const tasks = getTasks()
+    const countToDo = tasks.filter(task => task.complete === false).length
+    return countToDo
+ }
 
 
 export const Tasks = () => {

@@ -1,4 +1,4 @@
-import { sendTasks } from "./dataaccess.js";
+import { sendTasks, taskComplete } from "./dataaccess.js";
 const mainContainer = document.querySelector("#dashboard")
 
 export const TaskSubmission = () => {
@@ -24,6 +24,7 @@ export const TaskSubmission = () => {
 
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "taskButton") {
+      
         const userTaskDescription = document.querySelector("input[name='taskDescription']").value
         const userDate = document.querySelector("input[name='date']").value
         const dataToSendToAPI = {
@@ -34,4 +35,5 @@ mainContainer.addEventListener("click", clickEvent => {
         sendTasks(dataToSendToAPI)
         mainContainer.dispatchEvent(new CustomEvent ("stateChanged"))
     }
-})
+}
+)
