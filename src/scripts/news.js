@@ -1,8 +1,9 @@
-import { getNews, deleteNews } from "./dataaccess.js";
+import { getNews, deleteNews, getTags } from "./dataaccess.js";
 import { NewsForm } from "./newsForm.js";
 
 export const News = () => { 
     const stories = getNews()
+    const tags = getTags()
    
    
     
@@ -11,7 +12,7 @@ export const News = () => {
     <ul>
         ${
             stories.map(story => { 
-                return `<li><h2>${story.story}</h2> ${story.description} <h3><a href="https://www.youtube.com/watch?v=l2m4VOT1Tio">${story.url}</a></h3> <h4>Posted on: ${new Date(story.date).toLocaleString()}</h4> <h4><b>Tags: ${story.tagId}</b></h4>  <button class="news__delete" id="news--${story.id}">- </button>
+                return `<li><h2>${story.story}</h2> ${story.description} <h3><a href="https://www.youtube.com/watch?v=l2m4VOT1Tio">${story.url}</a></h3> <h4>Posted on: ${new Date(story.date).toLocaleString()}</h4> <h4><b>Tags: ${tags.tag}</b></h4>  <button class="news__delete" id="news--${story.id}">- </button>
             </li>`}).join("")
         }
         
