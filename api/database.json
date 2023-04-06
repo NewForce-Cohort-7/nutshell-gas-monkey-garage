@@ -5,6 +5,7 @@
       "description": "Community left stunned after a massive fire broke out on their block",
       "url": "wsaz.com",
       "date": "2023-04-04T14:24:11.614Z",
+      "tag": "local",
       "id": 1
     },
     {
@@ -12,7 +13,16 @@
       "description": "There is a tweet going viral about whether or not the peanut butter and jelly sandwich made some insensitive comments or not back in 2002.",
       "url": "foxnews.com",
       "date": 1680634032703,
+      "tag": "funny",
       "id": 2
+    },
+    {
+      "story": "Local man throws computer out of window",
+      "description": "\"I'm sick of losing at Fortnite!\" A Charleston man has thrown his computer from his 3rd story apartment building after getting clapped by another player in the video game Fortnite.",
+      "url": "reddit.com/r/unexpected",
+      "date": 1680795249047,
+      "tag": "funny, video games, fortnite",
+      "id": 3
     }
   ],
   "events": [
@@ -103,6 +113,12 @@
       "userName": "Tim",
       "date": "2023-04-05",
       "id": 8
+    },
+    {
+      "message": "hello!",
+      "userName": "Arnoldo",
+      "date": "2023-04-06",
+      "id": 9
     }
   ],
   "tasks": [
@@ -133,7 +149,7 @@
     {
       "taskDescription": "take dilly to the vet",
       "date": "2023-04-24",
-      "complete": false,
+      "complete": true,
       "id": 19
     },
     {
@@ -161,10 +177,29 @@
       "id": 23
     },
     {
-      "taskDescription": "make a pizza",
-      "date": "2023-04-04",
-      "complete": true,
+      "taskDescription": "drink MOAR cawfee",
+      "date": "2023-04-06",
+      "complete": false,
       "id": 24
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "tag": "local"
+    },
+    {
+      "id": 2,
+      "tag": "politics"
+    },
+    {
+      "id": 3,
+      "tag": "funny"
+    }
+  ],
+  "chuckFact": [
+    {
+      "fact": ""
     }
   ]
 }
