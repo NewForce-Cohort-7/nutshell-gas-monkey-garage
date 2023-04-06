@@ -1,4 +1,5 @@
 import { Nutshell } from "./Nutshell.js"
+import { fetchActivity } from "./events.js"
 import { fetchEvents, fetchTasks, fetchMessages, fetchImages, fetchNews, fetchJoke } from "./dataaccess.js"
 
 
@@ -11,6 +12,7 @@ const render = () => {
     .then(() => fetchImages())
     .then(() => fetchTasks())
     .then(() => fetchJoke())
+    .then(() => fetchActivity())
         .then(
             () => {
                 dashboard.innerHTML = Nutshell()

@@ -1,8 +1,10 @@
+//events.js is responsible for the events section on the dashboard
 import {getEvents, deleteEvent} from "./dataaccess.js"
 import {EventForm} from "./eventForm.js"
 
 const mainContainer = document.querySelector("#dashboard")
 
+//click event to delete the event if you don't want to see it anymore
 mainContainer.addEventListener("click", click => {
     if (click.target.id.startsWith("event--")) {
         const [, eventId] = click.target.id.split("--")
@@ -11,8 +13,7 @@ mainContainer.addEventListener("click", click => {
         })
     }
 })
-
-// they should see all of their events sorted into months, with a heading for each month and the total number of events in that month in parentheses beside the heading
+//this function is what displays the event
 const convertEventToListElement = (eventObject) => {
     
     return `
@@ -24,7 +25,7 @@ const convertEventToListElement = (eventObject) => {
     </li>`
 }
 
-
+//Events does several things. It finds the events and sorts them in chronological order. It also separates them and stores them by month. It displays in parenthesis how many events are happening in a month
 export const Events = () => {
     const events = getEvents()
     const sortEvents = events.sort((a, b) => new Date(a.date) - new Date(b.date))
@@ -42,6 +43,7 @@ export const Events = () => {
     const november = []
     const december = []
     
+//Each one of these for loops loop through the date of the event and sees if it matches the date index. If they match they are stored into an empty array that represents that month
 //January
     for (const singleEvent of sortEvents) {
         const d = new Date(singleEvent.date);
@@ -172,11 +174,62 @@ export const Events = () => {
 }
 
 export const OpenForm = () => {
-    return `<button id="open-form">Create New</button>`
+    return `<button id="open-form">Create New</button>
+    <div id="eventFormBox"></div>
+    `
 } 
 
 mainContainer.addEventListener("click", click => {
     if (click.target.id === "open-form") {
-        mainContainer.innerHTML += EventForm()
+document.querySelector("#eventFormBox").innerHTML += EventForm()
     }
 })
+
+
+
+//all this down here is responsible for getting exterior api and putting it onto our dashboard. It's actually part of a separate ticket, but since this is just for practice I did it here
+const yapplicationState = {
+    
+}
+
+
+export const fetchActivity = () => {
+fetch("http://www.boredapi.com/api/activity/")
+    .then(res => res.json())
+    .then(
+        (activitiesData) => {
+            yapplicationState.activitiesData = activitiesData;
+          }
+    )}
+
+export const GenerateRandomActivity = () => {
+        let html = `
+        <div>${yapplicationState.activitiesData.activity}!
+        </div>
+        `
+        return html
+    }
+    
+
+export const ActivityButton = () => {
+    return`<button id="actButton">Activity?</button>
+    <div id="activityBox"></div>`
+}
+
+mainContainer.addEventListener("click", click => {
+    if (click.target.id === "actButton") {
+        console.log(yapplicationState)
+        document.querySelector("#activityBox").innerHTML += GenerateRandomActivity()
+    }
+})
+
+export const RefreshButton = () => {
+    return`<button id="refresh">Refresh Activity</button>`
+}
+
+mainContainer.addEventListener("click", click => {
+    if (click.target.id === "refresh") {
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+    }
+})
+
