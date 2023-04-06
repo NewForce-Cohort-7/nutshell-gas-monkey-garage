@@ -4,6 +4,8 @@
   }
 #taskChart{
   max-width: 250px;
+  max-height: 250px;
+  align-content: center;
 }
  .newTask {
   background-color: rgb(241, 202, 246);

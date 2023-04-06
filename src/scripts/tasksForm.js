@@ -49,3 +49,9 @@ mainContainer.addEventListener("click", clickEvent => {
 }
 
 })
+mainContainer.addEventListener("click", click => {
+    if (click.target.id === "newTaskButton") {
+document.querySelector("#taskForm").innerHTML += TaskSubmission()
+}
+}
+)

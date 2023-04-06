@@ -13,6 +13,11 @@ const render = () => {
     .then(() => fetchTasks())
     .then(() => fetchJoke())
     .then(() => fetchActivity())
+    .then(
+        () => {
+            dashboard.innerHTML = Nutshell()
+        }
+    )
     .then(() => {
         const tasks = getTasks()
         const countCompleted = tasks.filter(task=> task.complete === true).length
@@ -32,13 +37,6 @@ const render = () => {
             options: {}
         });
     })
-
-
-        .then(
-            () => {
-                dashboard.innerHTML = Nutshell()
-            }
-        )
 }
 
 render()

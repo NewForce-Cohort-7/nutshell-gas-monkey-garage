@@ -52,8 +52,6 @@ export const finishedTasks = () => {
 //provides an update on the percentage of completed tasks
 export const progress = ()=> {
     const tasks = getTasks()
-   // const countCompleted = tasks.filter(task=> task.complete === true).length
-    //const countToDo = tasks.filter(task => task.complete === false).length
     let total = 0
     total = tasks.length
     
@@ -66,15 +64,10 @@ export const progress = ()=> {
     <div>
     <canvas id="taskChart"></canvas>
   </div>
-    Your're ${percentComplete}% way there!`
+    You're ${percentComplete}% way there!`
 
 }
-
-
-    //console.log(countCompleted)
-    //console.log(countToDo)
-
-    
+  
     
     const mainContainer = document.querySelector("#dashboard")    
     mainContainer.addEventListener("click", click => {
@@ -86,7 +79,8 @@ export const progress = ()=> {
       
     //opens up the new task form.
     export const openTask = ()  => {
-        return `<button id = "newTaskButton">New Task </button>`
+        return `<button id = "newTaskButton">New Task </button>
+        <div id="taskForm"><div>`
     }
     mainContainer.addEventListener("click", click => {
         if (click.target.id === "newTaskButton") {
