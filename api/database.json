@@ -145,8 +145,14 @@
     {
       "taskDescription": "Get some coffee!",
       "date": "2023-04-05",
-      "complete": false,
+      "complete": true,
       "id": 23
+    },
+    {
+      "taskDescription": "make a pizza",
+      "date": "2023-04-04",
+      "complete": true,
+      "id": 24
     }
   ]
 }
