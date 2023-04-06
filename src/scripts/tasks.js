@@ -1,22 +1,14 @@
+
+//by kathleen tyner. Allows the user to enter a new task, and displays the tasks entered by the user. Filters to-do and completed lists. When a user clicks the done checkbox the task is moved to the completed list. 
+
 import { getTasks, deleteTasks, taskComplete } from "./dataaccess.js"
 import { TaskSubmission } from "./tasksForm.js"
 
-export const numCompleted = () => {
-    const tasks = getTasks()
-    const countCompleted = tasks.filter(task=> task.complete === true).length
-    return countCompleted
-}
-    
- export const numToDo =() => {
-    const tasks = getTasks()
-    const countToDo = tasks.filter(task => task.complete === false).length
-    return countToDo
- }
-
-
+//sorts the the to-do list by date 
 export const Tasks = () => {
     const tasks = getTasks()
     const sortTasks = tasks.sort((a, b) => new Date(a.date) - new Date(b.date))
+
     let html = `<ul> `
     const converttaskToListElement = (task) => {
         if  (task.complete === false) {
@@ -37,9 +29,10 @@ export const Tasks = () => {
 }
       
     
-
+//displays the completed tasks
 export const finishedTasks = () => {
     const tasks = getTasks()
+    
     let html = `<ul> `
     const convertFinishedTaskToListElement = (task) => {
         if (task.complete === true) {                    
@@ -55,31 +48,57 @@ export const finishedTasks = () => {
 
     return html
 }
+
+//provides an update on the percentage of completed tasks
+export const progress = ()=> {
+    const tasks = getTasks()
+   // const countCompleted = tasks.filter(task=> task.complete === true).length
+    //const countToDo = tasks.filter(task => task.complete === false).length
+    let total = 0
+    total = tasks.length
+    
+    const complete = tasks.filter(task => {
+        return task.complete
+    }).length
+     const percentComplete = (total > 0) ? (complete/total) * 100:0 
+
+    return `
+    Your're ${percentComplete}% way there!`
+
+}
+
+
+    //console.log(countCompleted)
+    //console.log(countToDo)
+
+    const mainContainer = document.querySelector("#dashboard")    
+    mainContainer.addEventListener("click", click => {
+            if (click.target.id.startsWith("tasks--")) {
+                const [,taskId] = click.target.id.split("--")
+                taskComplete(parseInt(taskId))
+            }
+        })
       
+    //opens up the new task form.
+    export const openTask = ()  => {
+        return `<button id = "newTaskButton">New Task </button>`
+    }
+    mainContainer.addEventListener("click", click => {
+        if (click.target.id === "newTaskButton") {
+            mainContainer.innerHTML += TaskSubmission()
+        }
+    })
+    
 
 
-/*const mainContainer = document.querySelector("#dashboard")
+/*
+this code allows a user to delete a task for the database.
+
+const mainContainer = document.querySelector("#dashboard")
 mainContainer.addEventListener("click", click => {
     if (click.target.id.startsWith("tasks--")) {
         const [,taskId] = click.target.id.split("--")
         deleteTasks(parseInt(taskId))
     }})*/
- 
-const mainContainer = document.querySelector("#dashboard")    
-mainContainer.addEventListener("click", click => {
-        if (click.target.id.startsWith("tasks--")) {
-            const [,taskId] = click.target.id.split("--")
-            taskComplete(parseInt(taskId))
-        }
-    })
-       
-export const openTask = ()  => {
-    return `<button id = "newTaskButton">New Task </button>`
-}
-mainContainer.addEventListener("click", click => {
-    if (click.target.id === "newTaskButton") {
-        mainContainer.innerHTML += TaskSubmission()
-    }
-    
-})
 
+//moves task to a completed list when the done checkbox is checked 
