@@ -1,4 +1,4 @@
-import { getNews, deleteNews, getTags, articleTagged } from "./dataaccess.js";
+import { getNews, deleteNews, getTags } from "./dataaccess.js";
 import { NewsForm } from "./newsForm.js";
 
 export const News = () => { 
@@ -7,22 +7,13 @@ export const News = () => {
    
    
     
-    //*--*All URL links lead to the same page when the user clicks on the hypertext*--*//
+    //*--*All URL links lead to the same page when the user clicks on the hypertext (Saxophone Chihuahua from The Amazing World of Gumball*--*//
     let html = ` 
     <ul>
         ${
             stories.map(story => { 
-                return `<li><h2>${story.story}</h2> ${story.description} <h3><a href="https://www.youtube.com/watch?v=l2m4VOT1Tio">${story.url}</a></h3> <h4>Posted on: ${new Date(story.date).toLocaleString()}</h4> <button class="news__delete" id="news--${story.id}">- </button>
-                <select class="tags" id="tags>
-                <option value="">Choose</option>
-                ${
-                    tags.map(
-                        tag => {
-                            return `<option value="${story.id}--${tag.id}">${tag.tag}</option>`
-                        }
-                    ).join("")
-                }
-                </select>
+                return `<li><h2>${story.story}</h2> ${story.description} <h3><a href="https://www.youtube.com/watch?v=l2m4VOT1Tio">${story.url}</a></h3> <h4>Posted on: ${new Date(story.date).toLocaleString()}</h4> <h4>Tags: ${story.tag} <button class="news__delete" id="news--${story.id}">- </button>
+
             </li>`}).join("")
         
             }
@@ -41,7 +32,8 @@ const mainContainer = document.querySelector("#dashboard")
 
 mainContainer.addEventListener("click", click => {
     if (click.target.id === "newArticle") {
-      mainContainer.innerHTML += NewsForm()}
+        mainContainer.innerHTML += NewsForm()}
+    
     })
 
     mainContainer.addEventListener("click", click => {

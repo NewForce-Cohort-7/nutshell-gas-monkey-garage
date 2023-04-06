@@ -1,5 +1,6 @@
 import { Nutshell } from "./Nutshell.js"
-import { fetchEvents, fetchTasks, fetchMessages, fetchImages, fetchNews, fetchTags } from "./dataaccess.js"
+import { fetchEvents, fetchTasks, fetchMessages, fetchImages, fetchNews, fetchTags, setChuckFact, chuckNorrisFact } from "./dataaccess.js"
+import { fetchRandomFact } from "./cn_api.js"
 
 
 const dashboard = document.querySelector("#dashboard")
@@ -13,6 +14,12 @@ const render = () => {
     fetchTags()
         .then(
             () => {
+                if (!chuckNorrisFact()) {
+                    fetchRandomFact()
+                    .then((fact) => {
+                        setChuckFact(fact)
+                    })
+                }
                 dashboard.innerHTML = Nutshell()
       
         }

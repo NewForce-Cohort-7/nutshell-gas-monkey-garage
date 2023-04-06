@@ -3,7 +3,9 @@ const applicationState = {
     events: [],
     images: [], 
     messages: [],
-    tasks: []
+    tasks: [],
+    tags: [],
+    chuckFact:""
 }
 const API = "http://localhost:8088"
 
@@ -276,3 +278,16 @@ export const deleteTasks = (id) => {
         }
     )
     }
+
+//Chuck Norris Facts
+
+export const chuckNorrisFact = () => {
+    return applicationState.chuckFact
+}
+
+//New Chuck Norris fact in application state
+
+export const setChuckFact = (fact) => {
+    applicationState.chuckFact = fact
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}

@@ -4,6 +4,7 @@ import { Events, OpenForm } from "./events.js"
 import { News, newArticle } from "./news.js"
 import { OpenImageForm, Images } from "./images.js"
 import { Tasks, openTask, finishedTasks} from "./tasks.js"
+import { createChuckHTML } from "./ChuckNorris.js"
 
 export const Nutshell = () => {
 
@@ -60,6 +61,9 @@ export const Nutshell = () => {
                         <h2>Events</h2>
                         ${Events()}
                         ${OpenForm()}
+                  </section>
+                  <section class="chuckNorrisFacts">
+                  ${createChuckHTML()}
                   </section>
             </div>
       </div>
