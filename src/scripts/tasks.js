@@ -89,7 +89,12 @@ export const progress = ()=> {
         }
     })
     
-
+    mainContainer.addEventListener("click", click => {
+        if (click.target.id === "open-image-form") {
+          document.querySelector('#image-form').innerHTML += ImageForm()
+       
+        }
+    })
 
 /*
 this code allows a user to delete a task for the database.

@@ -72,12 +72,7 @@ const ImageForm = () => {
 }
 
 //Adds a click event to the id set in OpenImageForm, when clicked this adds ImageForm to the HTML without refresh
-mainContainer.addEventListener("click", click => {
-    if (click.target.id === "open-image-form") {
-      document.querySelector('#image-form').innerHTML += ImageForm()
-   
-    }
-})
+
 
 //Click event that targets the hashtag and declares my selectHashtag into the tag selected so that it can be sorted in filtered images inside of the Images() function
 document.addEventListener("click", event => {
