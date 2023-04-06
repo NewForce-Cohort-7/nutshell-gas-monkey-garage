@@ -3,8 +3,8 @@ import { userMessage } from "./userMessage.js"
 import { Events, OpenForm } from "./events.js"
 import { News, newArticle } from "./news.js"
 import { OpenImageForm, Images } from "./images.js"
-import { Tasks, openTask, finishedTasks} from "./tasks.js"
 import { createChuckHTML } from "./ChuckNorris.js"
+import { Tasks, openTask, finishedTasks, progress} from "./tasks.js" //all tasks by KT
 
 export const Nutshell = () => {
 
@@ -37,8 +37,9 @@ export const Nutshell = () => {
                   <section class="newTask">
                         <h2>My Tasks</h2>
                         ${openTask()}
-                  </section>
-                  <section class="tasks">
+                        ${progress()}
+                        </section>
+                        <section class="tasks">
                         <section class="tasksToDo">
                               <h2> To-Do List </h2> 
                               ${Tasks()}
