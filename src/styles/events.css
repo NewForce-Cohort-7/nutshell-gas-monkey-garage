@@ -1,21 +1,19 @@
-/* {
-    /* border: lightcoral dotted 1px; */
-
-/* .events{
-    font-size: 1.25em;
-    background-color: aqua;
+.events{
+    /* font-size: 2em; */
+    background-color: rgb(238,232,170);
 }
 
 .events h2 {
     padding-left: .5em;
     font-family: fantasy, copperplate; 
-    font-size: 2em
+    /* font-size: .5em; */
+    background-color: rgb(238,232,170)
 }
 
 .eventsList li:first-child {
 
     font-weight: bold;
-    font-size: larger;
+    /* font-size: larger; */
   }
 
 .eventComplete{
@@ -36,18 +34,17 @@ button.event__delete{
 }
 
 .blankEventForm{
-    font-size: 1.25em;
+    /* font-size: 1.25em; */
     background-color: rgb(255, 145, 0);
     margin-top: .75em;
 }
 
-/* left off working on the form when it pops up */
-/*
+
 .eventField{
     padding-top: .5em;
     padding-left: 1em;
     margin-top: .75em;
-    font-size: 1.25em;
+    /* font-size: 1.25em; */
 }
 
 button#saveEvent{

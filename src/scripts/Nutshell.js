@@ -1,9 +1,10 @@
 import { Messages } from "./messages.js"
 import { userMessage } from "./userMessage.js"
-import { Events, OpenForm } from "./events.js"
+import { ActivityButton, Events, OpenForm, RefreshButton } from "./events.js"
 import { News, newArticle } from "./news.js"
 import { OpenImageForm, Images } from "./images.js"
 import { Tasks, openTask, finishedTasks, progress} from "./tasks.js" //all tasks by KT
+import { DadJokes } from "./dadJokes.js"
 
 export const Nutshell = () => {
 
@@ -25,6 +26,7 @@ export const Nutshell = () => {
                         ${newArticle()}
                   </section>
             </div>
+
             
             <div class="col">
                   <section class="userMessage">
@@ -50,6 +52,10 @@ export const Nutshell = () => {
                         </section>
                   </section>
             </div>
+            <div class ="dad_jokes"> 
+            <h3>Dad Jokes</h3>
+            ${DadJokes()}
+            </div>
             
             <div class="col">
                   <section class="images">
@@ -60,6 +66,8 @@ export const Nutshell = () => {
                   </section>
                   <section class="events">
                         <h2>Events</h2>
+                        ${ActivityButton()}
+                        ${RefreshButton()}
                         ${Events()}
                         ${OpenForm()}
                   </section>
