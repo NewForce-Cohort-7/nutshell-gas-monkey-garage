@@ -1,6 +1,7 @@
 import { Nutshell } from "./Nutshell.js"
 import { fetchEvents, fetchTasks, fetchMessages, fetchImages, fetchNews, fetchTags, setChuckFact, chuckNorrisFact, fetchJoke } from "./dataaccess.js"
 import { fetchRandomFact } from "./cn_api.js"
+import { fetchActivity } from "./events.js"
 
 
 const dashboard = document.querySelector("#dashboard")
@@ -13,6 +14,7 @@ const render = () => {
     .then(() => fetchTasks())
     .then(() => fetchJoke())
     .then(() => fetchTags())
+    .then(() => fetchActivity())
         .then(
             () => { if (!chuckNorrisFact()) {
                 fetchRandomFact()

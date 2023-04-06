@@ -1,6 +1,6 @@
 import { Messages } from "./messages.js"
 import { userMessage } from "./userMessage.js"
-import { Events, OpenForm } from "./events.js"
+import { ActivityButton, Events, OpenForm, RefreshButton } from "./events.js"
 import { News, newArticle } from "./news.js"
 import { OpenImageForm, Images } from "./images.js"
 import { createChuckHTML } from "./ChuckNorris.js"
@@ -67,6 +67,8 @@ export const Nutshell = () => {
                   </section>
                   <section class="events">
                         <h2>Events</h2>
+                        ${ActivityButton()}
+                        ${RefreshButton()}
                         ${Events()}
                         ${OpenForm()}
                   </section>
