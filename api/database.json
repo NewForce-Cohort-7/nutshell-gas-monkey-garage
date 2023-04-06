@@ -173,19 +173,19 @@
     {
       "taskDescription": "drink MOAR cawfee",
       "date": "2023-04-06",
-      "complete": false,
+      "complete": true,
       "id": 24
     },
     {
       "taskDescription": "Kale Salad with ramps and bacon for dinner ",
       "date": "2023-04-06",
-      "complete": false,
+      "complete": true,
       "id": 25
     },
     {
       "taskDescription": "make ramp pesto",
       "date": "2023-04-07",
-      "complete": false,
+      "complete": true,
       "id": 26
     },
     {
