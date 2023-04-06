@@ -63,6 +63,9 @@ export const progress = ()=> {
      const percentComplete = (total > 0) ? (complete/total) * 100:0 
 
     return `
+    <div>
+    <canvas id="taskChart"></canvas>
+  </div>
     Your're ${percentComplete}% way there!`
 
 }
@@ -71,6 +74,8 @@ export const progress = ()=> {
     //console.log(countCompleted)
     //console.log(countToDo)
 
+    
+    
     const mainContainer = document.querySelector("#dashboard")    
     mainContainer.addEventListener("click", click => {
             if (click.target.id.startsWith("tasks--")) {
@@ -86,13 +91,6 @@ export const progress = ()=> {
     mainContainer.addEventListener("click", click => {
         if (click.target.id === "newTaskButton") {
             mainContainer.innerHTML += TaskSubmission()
-        }
-    })
-    
-    mainContainer.addEventListener("click", click => {
-        if (click.target.id === "open-image-form") {
-          document.querySelector('#image-form').innerHTML += ImageForm()
-       
         }
     })
 
