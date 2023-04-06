@@ -63,6 +63,8 @@ export const progress = ()=> {
      const percentComplete = (total > 0) ? (complete/total) * 100:0 
 
     return `
+    <div id="taskChart">
+    <canvas id="taskChart"></canvas>
     Your're ${percentComplete}% way there!`
 
 }

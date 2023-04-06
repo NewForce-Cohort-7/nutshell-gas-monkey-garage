@@ -38,7 +38,7 @@ export const Nutshell = () => {
                   <section class="newTask">
                         <h2>My Tasks</h2>
                         ${openTask()}
-                        ${progress()}
+                        ${progress()}                        
                         </section>
                         <section class="tasks">
                         <section class="tasksToDo">

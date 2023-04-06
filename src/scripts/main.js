@@ -13,12 +13,7 @@ const render = () => {
     .then(() => fetchTasks())
     .then(() => fetchJoke())
     .then(() => fetchActivity())
-        .then(
-            () => {
-                dashboard.innerHTML = Nutshell()
-            }
-        )
-}
+    
 
 render()
 
