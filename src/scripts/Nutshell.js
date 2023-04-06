@@ -28,19 +28,18 @@ export const Nutshell = () => {
             </div>
 
             
-      <div class="col">
-            <section class="userMessage">
-            ${userMessage()}
-             </section>
-            <section class="serviceForm">
-            ${Messages()}
-            </section>
-      <section class="newTask">
-            <h2>My Tasks</h2>
-            ${openTask()}
-            <canvas id="taskChart"></canvas>
-            ${progress()}
-            </section>
+            <div class="col">
+                  <section class="userMessage">
+                        ${userMessage()}
+                  </section>
+                  <section class="serviceForm">
+                        ${Messages()}
+                  </section>
+                  <section class="newTask">
+                        <h2>My Tasks</h2>
+                        ${openTask()}
+                        ${progress()}
+                        </section>
                         <section class="tasks">
                         <section class="tasksToDo">
                               <h2> To-Do List </h2> 
@@ -59,12 +58,15 @@ export const Nutshell = () => {
             </div>
             
             <div class="col">
+                  <section class="image-title">
+                  <h2>Images</h2>
+                  </section>
                   <section class="images">
                         ${Images()}
                         ${OpenImageForm()}
                   </section>
-                  <section id="image-form">
-                  </section>
+                  <div id="image-form">
+                  </div>
                   <section class="events">
                         <h2>Events</h2>
                         ${ActivityButton()}
