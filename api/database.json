@@ -17,11 +17,11 @@
       "id": 2
     },
     {
-      "story": "booger",
-      "description": "booger",
-      "url": "bogger.com",
-      "date": 1680720503402,
-      "tag": "funny",
+      "story": "Local man throws computer out of window",
+      "description": "\"I'm sick of losing at Fortnite!\" A Charleston man has thrown his computer from his 3rd story apartment building after getting clapped by another player in the video game Fortnite.",
+      "url": "reddit.com/r/unexpected",
+      "date": 1680795249047,
+      "tag": "funny, video games, fortnite",
       "id": 3
     }
   ],
@@ -113,6 +113,12 @@
       "userName": "Tim",
       "date": "2023-04-05",
       "id": 8
+    },
+    {
+      "message": "hello!",
+      "userName": "Arnoldo",
+      "date": "2023-04-06",
+      "id": 9
     }
   ],
   "tasks": [
