@@ -26,7 +26,6 @@ export const Images = () => {
                     ? image.hashtag.map(hashtag => `<button class="image-tag" data-tag="${hashtag}">${hashtag}</button>`).join("")
                     : ""
                         return `
-                        <h2>Images</h2>
                         <div class="images">
                             <img class="image" id="${image.id}" src="${image.url}"/>
                         </div>
