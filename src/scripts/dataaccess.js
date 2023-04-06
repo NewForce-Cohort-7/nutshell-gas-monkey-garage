@@ -6,6 +6,7 @@ const applicationState = {
     tasks: []
 }
 const API = "http://localhost:8088"
+const mainContainer = document.querySelector("#dashboard")
 
 export const fetchMessages = () => {
   return fetch(`${API}/messages`)
