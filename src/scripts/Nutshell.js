@@ -3,6 +3,7 @@ import { userMessage } from "./userMessage.js"
 import { ActivityButton, Events, OpenForm, RefreshButton } from "./events.js"
 import { News, newArticle } from "./news.js"
 import { OpenImageForm, Images } from "./images.js"
+import { createChuckHTML } from "./ChuckNorris.js"
 import { Tasks, openTask, finishedTasks, progress} from "./tasks.js" //all tasks by KT
 import { DadJokes } from "./dadJokes.js"
 
@@ -73,6 +74,9 @@ export const Nutshell = () => {
                         ${RefreshButton()}
                         ${Events()}
                         ${OpenForm()}
+                  </section>
+                  <section class="chuckNorrisFacts">
+                  ${createChuckHTML()}
                   </section>
             </div>
       </div>

@@ -4,6 +4,8 @@ const applicationState = {
     images: [], 
     messages: [],
     tasks: [],
+    tags: [],
+    chuckFact:"",
     dadJokes: {
       setup:"",
       punchline:""
@@ -92,6 +94,20 @@ export const fetchNews = () => {
     )
 }
 
+export const fetchTags = () => {
+    return fetch(`${API}/tags`)
+    .then(response => response.json())
+    .then(
+        (data) => {
+            applicationState.tags = data
+        }
+    )
+}
+
+export const getTags = () => {
+    return applicationState.tags.map((singleTag) => ({...singleTag}))
+}
+
 export const getNews = () => {
     return applicationState.news.map((singleNewsStory) => ({...singleNewsStory}))
 };
@@ -111,6 +127,23 @@ export const sendNews = (userNewsAddition) => {
             mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
         })
 }
+
+export const articleTagged = (taggedArticle) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(taggedArticle)
+    }
+
+    return fetch(`${API}/tags`, fetchOptions)
+    .then(response => response.json())
+    .then(()=> {
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+    })
+}
+
 
 //events
 export const fetchEvents = () => {
@@ -255,6 +288,18 @@ export const deleteTasks = (id) => {
     )
     }
 
+//Chuck Norris Facts
+
+export const chuckNorrisFact = () => {
+    return applicationState.chuckFact
+}
+
+//New Chuck Norris fact in application state
+
+export const setChuckFact = (fact) => {
+    applicationState.chuckFact = fact
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
   //   export const fetchDadJokes = () => {
   //     return fetch(`${dadAPI}/dadJokes`)
   //       .then((response) => response.json())

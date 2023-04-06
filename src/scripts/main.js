@@ -1,6 +1,7 @@
 import { Nutshell } from "./Nutshell.js"
+import { fetchEvents, fetchTasks, fetchMessages, fetchImages, fetchNews, fetchTags, setChuckFact, chuckNorrisFact, fetchJoke } from "./dataaccess.js"
+import { fetchRandomFact } from "./cn_api.js"
 import { fetchActivity } from "./events.js"
-import { fetchEvents, fetchTasks, fetchMessages, fetchImages, fetchNews, fetchJoke } from "./dataaccess.js"
 
 
 const dashboard = document.querySelector("#dashboard")
@@ -12,6 +13,7 @@ const render = () => {
     .then(() => fetchImages())
     .then(() => fetchTasks())
     .then(() => fetchJoke())
+    .then(() => fetchTags())
     .then(() => fetchActivity())
     
 
@@ -40,4 +42,4 @@ dashboard.addEventListener(
     }
 )
     
-    
+}
