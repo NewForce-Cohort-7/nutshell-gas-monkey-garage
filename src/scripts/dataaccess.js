@@ -5,9 +5,14 @@ const applicationState = {
     messages: [],
     tasks: [],
     tags: [],
-    chuckFact:""
+    chuckFact:"",
+    dadJokes: {
+      setup:"",
+      punchline:""
+    }
 }
 const API = "http://localhost:8088"
+const dadAPI = "https://dad-jokes.p.rapidapi.com/random/joke/png"
 const mainContainer = document.querySelector("#dashboard")
 
 export const fetchMessages = () => {
@@ -24,6 +29,7 @@ export const getMessages = () => {
 };
 
 export const sendMessage = (userServicemessage) => {
+ const mainContainer = document.querySelector("#dashboard")
   const fetchOptions = {
     method: "POST",
     headers: {
@@ -33,6 +39,7 @@ export const sendMessage = (userServicemessage) => {
   };
 
   return fetch(`${API}/messages`, fetchOptions)
+  
     .then((response) => response.json())
     .then(() => {
       mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
@@ -40,6 +47,7 @@ export const sendMessage = (userServicemessage) => {
 };
 
 export const deleteMessage = (id) => {
+  const mainContainer = document.querySelector("#dashboard")
   return fetch(`${API}/messages/${id}`, { method: "DELETE" }).then(() => {
     mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
   });
@@ -292,3 +300,41 @@ export const setChuckFact = (fact) => {
     applicationState.chuckFact = fact
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
+  //   export const fetchDadJokes = () => {
+  //     return fetch(`${dadAPI}/dadJokes`)
+  //       .then((response) => response.json())
+  //       .then((serviceDadJokes) => {
+  //         // Store the external state in application state
+  //         applicationState.dadJokes = serviceDadJokes;
+  //       });
+  //   };
+    
+    export const getDadJokes = () => {
+      return applicationState.dadJokes
+    };
+    
+  //fetches dad joke from api
+export const fetchJoke = () => {
+    
+  const fetchOptions = {
+   method: 'GET',
+   url: 'https://dad-jokes.p.rapidapi.com/random/joke/png',
+   headers: {
+     'X-RapidAPI-Key': '85671576b0msh119d781167f1e20p127739jsne4bf7a854152',
+     'X-RapidAPI-Host': 'dad-jokes.p.rapidapi.com'
+   }
+ };
+ 
+     return fetch(`${dadAPI}`, fetchOptions)
+     .then(response => response.json())
+     .then((dadJokeObj) => {
+        //  console.log(dadJokeObj.body.setup)
+        //  console.log(dadJokeObj.body.punchline)
+               // Store the external state in application state
+          applicationState.dadJokes.setup = dadJokeObj.body.setup
+          applicationState.dadJokes.punchline = dadJokeObj.body.punchline
+
+     })
+ }
+ 
+ 

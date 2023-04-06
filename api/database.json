@@ -101,26 +101,12 @@
   ],
   "messages": [
     {
-      "message": "yo world",
-      "userName": "bdean",
-      "date": "2023-04-01",
-      "id": 6,
-      "likes": 6,
-      "dislikes": 8
-    },
-    {
       "message": "Hey!",
       "userName": "kt",
       "date": "2023-04-05",
       "id": 1,
       "likes": 1,
       "dislikes": null
-    },
-    {
-      "message": "ello guvnuh",
-      "userName": "Aaron",
-      "date": "2023-04-12",
-      "id": 7
     },
     {
       "message": "Howdy",
