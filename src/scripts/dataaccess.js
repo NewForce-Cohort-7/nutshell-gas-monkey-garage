@@ -4,10 +4,13 @@ const applicationState = {
     images: [], 
     messages: [],
     tasks: [],
-    dadJokes: []
+    dadJokes: {
+      setup:"",
+      punchline:""
+    }
 }
 const API = "http://localhost:8088"
-const dadAPI = "https://dad-jokes.p.rapidapi.com/random/joke"
+const dadAPI = "https://dad-jokes.p.rapidapi.com/random/joke/png"
 export const fetchMessages = () => {
   return fetch(`${API}/messages`)
     .then((response) => response.json())
@@ -22,6 +25,7 @@ export const getMessages = () => {
 };
 
 export const sendMessage = (userServicemessage) => {
+ const mainContainer = document.querySelector("#dashboard")
   const fetchOptions = {
     method: "POST",
     headers: {
@@ -31,6 +35,7 @@ export const sendMessage = (userServicemessage) => {
   };
 
   return fetch(`${API}/messages`, fetchOptions)
+  
     .then((response) => response.json())
     .then(() => {
       mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
@@ -38,6 +43,7 @@ export const sendMessage = (userServicemessage) => {
 };
 
 export const deleteMessage = (id) => {
+  const mainContainer = document.querySelector("#dashboard")
   return fetch(`${API}/messages/${id}`, { method: "DELETE" }).then(() => {
     mainContainer.dispatchEvent(new CustomEvent("stateChanged"));
   });
@@ -247,25 +253,41 @@ export const deleteTasks = (id) => {
     )
     }
 
-    export const fetchDadJokes = () => {
-      return fetch(`${dadAPI}/dadJokes`)
-        .then((response) => response.json())
-        .then((serviceDadJokes) => {
-          // Store the external state in application state
-          applicationState.dadJokes = serviceDadJokes;
-        });
-    };
+  //   export const fetchDadJokes = () => {
+  //     return fetch(`${dadAPI}/dadJokes`)
+  //       .then((response) => response.json())
+  //       .then((serviceDadJokes) => {
+  //         // Store the external state in application state
+  //         applicationState.dadJokes = serviceDadJokes;
+  //       });
+  //   };
     
     export const getDadJokes = () => {
-      return applicationState.dadJokes.map((dadJoke) => ({ ...dadJoke }));
+      return applicationState.dadJokes
     };
     
-    export const sendDadJoke = (userServiceDadJoke) => {
-      const fetchOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userServiceDadJoke),
-      }
-    };
+  //fetches dad joke from api
+export const fetchJoke = () => {
+    
+  const fetchOptions = {
+   method: 'GET',
+   url: 'https://dad-jokes.p.rapidapi.com/random/joke/png',
+   headers: {
+     'X-RapidAPI-Key': '85671576b0msh119d781167f1e20p127739jsne4bf7a854152',
+     'X-RapidAPI-Host': 'dad-jokes.p.rapidapi.com'
+   }
+ };
+ 
+     return fetch(`${dadAPI}`, fetchOptions)
+     .then(response => response.json())
+     .then((dadJokeObj) => {
+        //  console.log(dadJokeObj.body.setup)
+        //  console.log(dadJokeObj.body.punchline)
+               // Store the external state in application state
+          applicationState.dadJokes.setup = dadJokeObj.body.setup
+          applicationState.dadJokes.punchline = dadJokeObj.body.punchline
+
+     })
+ }
+ 
+ 
