@@ -24,6 +24,7 @@ export const userMessage = () => {
 
 const mainContainer = document.querySelector("#dashboard")
 
+//sends data once clicked
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitMessage") {
         // Get what the user typed into the form fields
