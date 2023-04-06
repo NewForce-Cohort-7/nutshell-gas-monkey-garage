@@ -20,7 +20,7 @@ const generateCNHTML = (chuckFact) => {
 const render = () => {
     const chuckFact = chuckNorrisFact()
     const html = generateCNHTML(chuckFact)
-    document.querySelector("#chuckFact").innerHTML = html
+    document.querySelector("#dashboard").innerHTML = html
 }
 
 //Generates HTML code for the fact without rendering it
@@ -32,7 +32,7 @@ export const createChuckHTML = () => {
 
 //innerHTML for the fact
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector("#chuckNorrisFact").innerHTML = createChuckHTML()
+    document.querySelector("#chuckFact").innerHTML = createChuckHTML()
 })
 
 //Event listener for the facts
