@@ -23,14 +23,6 @@
       "date": 1680720503402,
       "tag": "funny",
       "id": 3
-    },
-    {
-      "story": "booger",
-      "description": "booger",
-      "url": "bogger.com",
-      "date": 1680790669025,
-      "tag": "happy",
-      "id": 4
     }
   ],
   "events": [
@@ -167,9 +159,9 @@
       "id": 23
     },
     {
-      "taskDescription": "not be sad anymore",
-      "date": "2023-04-20",
-      "complete": true,
+      "taskDescription": "drink MOAR cawfee",
+      "date": "2023-04-06",
+      "complete": false,
       "id": 24
     }
   ],
@@ -191,6 +183,5 @@
     {
       "fact": ""
     }
- 
   ]
 }
