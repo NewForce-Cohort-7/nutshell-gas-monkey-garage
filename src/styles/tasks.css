@@ -2,7 +2,11 @@
     background-color:rgb(241, 202, 246)
   
   }
-
+#taskChart{
+  max-width: 250px;
+  max-height: 250px;
+  align-content: center;
+}
  .newTask {
   background-color: rgb(241, 202, 246);
   font-family: Verdana, Geneva, Tahoma, sans-serif;

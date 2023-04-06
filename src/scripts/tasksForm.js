@@ -1,5 +1,5 @@
 //by kathleen tyner. This code presents the form the user will use to enter tasks into the dashboard.
-import { sendTasks, taskComplete } from "./dataaccess.js";
+import { sendTasks } from "./dataaccess.js";
 const mainContainer = document.querySelector("#dashboard")
 
 
@@ -25,12 +25,19 @@ export const TaskSubmission = () => {
     return html
 }
 
-//submit task button click event
+
+//submit task button click event to send user completed fields to the API 
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "taskButton") {
       
         const userTaskDescription = document.querySelector("input[name='taskDescription']").value
         const userDate = document.querySelector("input[name='date']").value
+       
+       //ensures all fields are completed. 
+        if(!userTaskDescription || !userDate) {
+            window.alert("Stay on task! All fields must be completed")
+        } else {
+        
         const dataToSendToAPI = {
             taskDescription: userTaskDescription,
             date: userDate,
@@ -39,5 +46,12 @@ mainContainer.addEventListener("click", clickEvent => {
         sendTasks(dataToSendToAPI)
         mainContainer.dispatchEvent(new CustomEvent ("stateChanged"))
     }
+}
+
+})
+mainContainer.addEventListener("click", click => {
+    if (click.target.id === "newTaskButton") {
+document.querySelector("#taskForm").innerHTML += TaskSubmission()
+}
 }
 )
