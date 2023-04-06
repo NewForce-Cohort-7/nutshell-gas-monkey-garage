@@ -1,6 +1,9 @@
-import { sendTasks } from "./dataaccess.js";
+//by kathleen tyner. This code presents the form the user will use to enter tasks into the dashboard.
+import { sendTasks, taskComplete } from "./dataaccess.js";
 const mainContainer = document.querySelector("#dashboard")
 
+
+// task form
 export const TaskSubmission = () => {
     let html = `
        <section class="taskForm">
@@ -22,8 +25,10 @@ export const TaskSubmission = () => {
     return html
 }
 
+//submit task button click event
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "taskButton") {
+      
         const userTaskDescription = document.querySelector("input[name='taskDescription']").value
         const userDate = document.querySelector("input[name='date']").value
         const dataToSendToAPI = {
@@ -34,4 +39,5 @@ mainContainer.addEventListener("click", clickEvent => {
         sendTasks(dataToSendToAPI)
         mainContainer.dispatchEvent(new CustomEvent ("stateChanged"))
     }
-})
+}
+)

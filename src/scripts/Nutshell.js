@@ -3,7 +3,7 @@ import { userMessage } from "./userMessage.js"
 import { Events, OpenForm } from "./events.js"
 import { News, newArticle } from "./news.js"
 import { OpenImageForm, Images } from "./images.js"
-import { Tasks, openTask, finishedTasks} from "./tasks.js"
+import { Tasks, openTask, finishedTasks, progress} from "./tasks.js" //all tasks by KT
 import { DadJokes } from "./dadJokes.js"
 
 export const Nutshell = () => {
@@ -38,8 +38,9 @@ export const Nutshell = () => {
                   <section class="newTask">
                         <h2>My Tasks</h2>
                         ${openTask()}
-                  </section>
-                  <section class="tasks">
+                        ${progress()}
+                        </section>
+                        <section class="tasks">
                         <section class="tasksToDo">
                               <h2> To-Do List </h2> 
                               ${Tasks()}
@@ -58,9 +59,10 @@ export const Nutshell = () => {
             
             <div class="col">
                   <section class="images">
-                        <h2>Images</h2>
                         ${Images()}
                         ${OpenImageForm()}
+                  </section>
+                  <section id="image-form">
                   </section>
                   <section class="events">
                         <h2>Events</h2>
