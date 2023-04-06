@@ -59,12 +59,15 @@ export const Nutshell = () => {
             </div>
             
             <div class="col">
+                  <section class="image-title">
+                  <h2>Images</h2>
+                  </section>
                   <section class="images">
                         ${Images()}
                         ${OpenImageForm()}
                   </section>
-                  <section id="image-form">
-                  </section>
+                  <div id="image-form">
+                  </div>
                   <section class="events">
                         <h2>Events</h2>
                         ${ActivityButton()}
