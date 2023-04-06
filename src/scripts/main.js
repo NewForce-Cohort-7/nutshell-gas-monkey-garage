@@ -12,8 +12,14 @@ const render = () => {
     .then(() => fetchImages())
     .then(() => fetchTasks())
     .then(() => fetchJoke())
+    .then(() => fetchTags())
         .then(
-            () => {
+            () => { if (!chuckNorrisFact()) {
+                fetchRandomFact()
+                .then((fact) => {
+                    setChuckFact(fact)
+                })
+            }
                 dashboard.innerHTML = Nutshell()
             }
         )

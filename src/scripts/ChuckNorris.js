@@ -20,7 +20,7 @@ const generateCNHTML = (chuckFact) => {
 const render = () => {
     const chuckFact = chuckNorrisFact()
     const html = generateCNHTML(chuckFact)
-    document.querySelector("#dashboard").innerHTML = html
+    document.querySelector("#chuckFact").innerHTML = html
 }
 
 //Generates HTML code for the fact without rendering it
