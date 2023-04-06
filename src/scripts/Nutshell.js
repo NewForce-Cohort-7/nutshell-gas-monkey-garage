@@ -54,9 +54,10 @@ export const Nutshell = () => {
             
             <div class="col">
                   <section class="images">
-                        <h2>Images</h2>
                         ${Images()}
                         ${OpenImageForm()}
+                  </section>
+                  <section id="image-form">
                   </section>
                   <section class="events">
                         <h2>Events</h2>
