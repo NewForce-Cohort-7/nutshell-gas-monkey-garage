@@ -10,7 +10,8 @@ const applicationState = {
     }
 }
 const API = "http://localhost:8088"
-const dadAPI = "https://dad-jokes.p.rapidapi.com/random/joke/png"const mainContainer = document.querySelector("#dashboard")
+const dadAPI = "https://dad-jokes.p.rapidapi.com/random/joke/png"
+const mainContainer = document.querySelector("#dashboard")
 
 export const fetchMessages = () => {
   return fetch(`${API}/messages`)
