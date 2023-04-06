@@ -40,6 +40,16 @@ const render = () => {
             options: {}
         });
     })
+        .then(
+            () => { if (!chuckNorrisFact()) {
+                fetchRandomFact()
+                .then((fact) => {
+                    setChuckFact(fact)
+                })
+            }
+                dashboard.innerHTML = Nutshell()
+            }
+        )
 }
 
 render()
